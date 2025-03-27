@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cygnus 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+   <!-- Updated Navbar for index.html and register.html -->
+<nav class="navbar">
+    <div class="container">
+        <a href="index.html" class="logo">
+            <i class="fas fa-bolt"></i> Cygnus
+        </a>
+        <div class="nav-menu">
+            <a href="index.html#about-event" class="nav-icon" data-title="About">
+                <i class="fas fa-info-circle"></i>
+            </a>
+            <a href="index.html#events" class="nav-icon" data-title="Events">
+                <i class="fas fa-calendar-alt"></i>
+            </a>
+            <a href="index.html#organizers" class="nav-icon" data-title="Organizers">
+                <i class="fas fa-users"></i>
+            </a>
+            <a href="index.html#sponsors" class="nav-icon" data-title="Sponsors">
+                <i class="fas fa-hand-holding-usd"></i>
+            </a>
+            <a href="register.html" class="nav-icon" data-title="Register">
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
+            <!-- Theme Toggle -->
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch" class="theme-switch-input">
+                <label for="theme-switch" class="theme-switch-label">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </label>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Igniting Innovation in Electrical Engineering</h1>
+            <p class="hero-tagline">Showcase your innovative research and ideas.</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days">00</span> days
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">00</span> hours
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">00</span> minutes
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">00</span> seconds
+                </div>
+            </div>
+            <a href="#register" class="cta-button" id="register-button">Register Now</a>
+        </div>
+    </section>
+<!-- About Event Section -->
+<section id="about-event" class="about-event">
+    <div class="container">
+        <h2 class="section-title">About Cygnus 2025</h2>
+        <div class="event-details">
+            <div class="event-info">
+                <h3>Electrical Engineering Innovation Conference</h3>
+                <p>Cygnus 2025 is a premier event designed to showcase cutting-edge electrical engineering innovations and provide a platform for talented engineers and researchers to demonstrate their technical prowess.</p>
+                
+                <h4>Event Highlights</h4>
+                <ul>
+                    <li>Competitive technical challenges</li>
+                    <li>Networking opportunities with industry experts</li>
+                    <li>Showcase of groundbreaking research</li>
+                    <li>Interactive workshops and seminars</li>
+                </ul>
+                
+                <h4>Who Should Attend</h4>
+                <ul>
+                    <li>Electrical Engineering Students</li>
+                    <li>Research Scholars</li>
+                    <li>Industry Professionals</li>
+                    <li>Technology Enthusiasts</li>
+                </ul>
+            </div>
+            
+            <div class="event-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>500+</h3>
+                    <p>Participants Expected</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>1 Day</h3>
+                    <p>Intensive Conference</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>7</h3>
+                    <p>Competitive Events</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2 class="section-title">Events</h2>
+            
+            <h3 class="events-category-title">Technical Events</h3>
+            <div class="events-grid technical-events">
+                <div class="event-card" data-event-timing="10:00 AM - 11:30 AM">
+                    <i class="fas fa-file-alt"></i>
+                    <img src="gif/e1-static.png" alt="Paper Presentation" class="event-gif">
+                    <h3>Paper Presentation</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="11:45 AM - 1:00 PM">
+                    <i class="fas fa-project-diagram"></i>
+                    <img src="gif/e2-static.png" alt="Project Presentation" class="event-gif">
+                    <h3>Project Presentation</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="2:00 PM - 3:30 PM">
+                    <i class="fas fa-microchip"></i>
+                    <img src="gif/e3-static.png" alt="CircuitXplorer" class="event-gif">
+                    <h3>CircuitXplorer</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="3:45 PM - 4:30 PM">
+                    <i class="fas fa-bolt"></i>
+                    <img src="gif/e4-static.png" alt="Ampere Arena" class="event-gif">
+                    <h3>Ampere Arena</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="4:45 PM - 5:30 PM">
+                    <i class="fas fa-history"></i>
+                    <img src="gif/e1-static.png" alt="Tesla vs Edison" class="event-gif">
+                    <h3>Tesla vs Edison</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+            </div>
+    
+            <h3 class="events-category-title">Non-Technical Events</h3>
+            <div class="events-grid non-technical-events">
+                <div class="event-card" data-event-timing="11:00 AM - 12:00 PM">
+                    <i class="fas fa-utensils"></i>
+                    <img src="gif/e2-static.png" alt="Watt a Biryani" class="event-gif">
+                    <h3>Watt a Biryani</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="1:30 PM - 2:30 PM">
+                    <i class="fas fa-palette"></i>
+                    <img src="gif/e3-static.png" alt="Flux Your Talent" class="event-gif">
+                    <h3>Flux Your Talent</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+                <div class="event-card" data-event-timing="3:00 PM - 4:00 PM">
+                    <i class="fas fa-gamepad"></i>
+                    <img src="gif/e4-static.png" alt="Mini Mania" class="event-gif">
+                    <h3>Mini Mania</h3>
+                    <button class="event-details-btn">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="organizers">
+        <div class="container">
+            <h2 class="section-title">Organizers</h2>
+            <div class="organizers-grid">
+                <div class="organizer-card">
+                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Organizer 1">
+                    <h3>Assistant Professor</h3>
+                </div>
+                <div class="organizer-card">
+                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Organizer 2">
+                    <h3>Head of Department</h3>
+                </div>
+                <div class="organizer-card">
+                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Organizer 3">
+                    <h3>Student Treasurer</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="sponsors">
+        <div class="container">
+            <h2 class="section-title">Sponsors</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Generous support for our event.</h3>
+                </div>
+                <div class="sponsor-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Valuable contribution to our success.</h3>
+                </div>
+                <div class="sponsor-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Key partner in making this event possible.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-bolt"></i> Cygnus
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@cygnus.com</p>
+                    <p>Phone: +1 555-123-4567</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cygnus. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
