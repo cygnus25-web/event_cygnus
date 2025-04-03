@@ -14,34 +14,42 @@
 <body>
     <div class="video-background">
         <video autoplay muted loop id="backgroundVideo">
-            <source src="img/BG.mov" type="video/mp4">
-            <!-- Fallback image in case video doesn't load
-            <img src="img/BG.mov" alt="Electrical Background"> -->
+            <source src="img/BG.mp4" type="video/mp4">
         </video>
         <div class="video-overlay"></div>
     </div>
 
-    <header>
-        <a href="#" class="logo">
-            <i class="fas fa-bolt logo-icon"></i>
-            CYGNUS'25
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                CYGNUS'25
+            </a>
+            
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="active">Home</a></li>
                 <li><a href="#about-crescent">About Crescent</a></li>
                 <li><a href="#about-event">About Event</a></li>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#guidelines">Guidelines</a></li>
                 <li><a href="#organizers">Organizers</a></li>
                 <li><a href="#sponsors">Sponsors</a></li>
-                <li><a href="#registration">Register</a></li>
+                <li class="register-link"><a href="#registration">Register</a></li>
             </ul>
-        </nav>
+            
+            <div class="nav-ornament ornament-left"></div>
+            <div class="nav-ornament ornament-right"></div>
+        </div>
     </header>
-    
+    <br> <br>
     <section class="hero" id="hero">
-        <img src="img/eee.png" alt="CYGNUS'25 Logo" class="hero-image"> <br>
+        <img src="img/eee.png" alt="CYGNUS'25 Logo" class="hero-image"> <br> <br>
         <h5 style="color: rgb(223, 154, 94); font-size: 18px; -webkit-text-stroke: 2px;">PROUDLY PRESENTS</h5> <br>
         <h5 style="color: rgb(224, 235, 6); font-size: 30px; text-shadow: 2px 2px 4px #ffffffdf;"><b>A NATIONAL LEVEL SYMPOSIUM</b></h5> <br>
         <img src="img/cygnus1.png" alt="CYGNUS'25 Logo" class="hero-image"><br>
@@ -113,12 +121,12 @@
 <section id="about-event" class="about-event">
     <div class="container">
         <div class="section-header">
-            <h2>About CYGNUS</h2>
+            <h2>About CYGNUS'25</h2>
         </div>
         <div class="event-details">
             <div class="event-info">
                 <img src="img/cygnus’25.png" alt="CYGNUS Event" class="event-image">
-                <p>CYGNUS is a National level Symposium that is conducted every year by the Department of Electrical and Electronics Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 8 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electrical and Electronics Engineering.</p>
+                <p style="font-family: 'Georgia', serif; text-align: justify;">CYGNUS is a National level Symposium that is conducted every year by the Department of Electrical and Electronics Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 8 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electrical and Electronics Engineering.</p>
             </div>
             <div class="event-stats">
                 <div class="stat-card">
@@ -240,7 +248,8 @@
         </div>
     </section>
 
-       <!-- About Crescent Section -->
+<!-- About Crescent Section -->
+
        <section id="about-crescent" class="about-crescent">
         <div class="container">
             <div class="section-header">
@@ -248,21 +257,18 @@
             </div>
             <div class="crescent-details">
                 <div class="crescent-info">
-                    <h3>B.S. Abdur Rahman Crescent Institute of Science & Technology</h3>
-                    <p>B.S. Abdur Rahman Crescent Institute of Science & Technology, formerly B.S. Abdur Rahman University, is a premier educational institution that has established itself as a leader in fostering academic excellence and innovation since its inception.</p>
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <img src="img/cres1.jpeg" alt="Image 1">
+                            <img src="img/cres2.jpeg" alt="Image 2">
+                            <img src="img/cres3.jpeg" alt="Image 3">
+                        </div>
+                    </div> <br>
                     
-                    <h4>Our Legacy</h4>
-                    <p>With decades of academic excellence, Crescent Institute has been transforming lives through quality education and cutting-edge research. Our institution has consistently produced graduates who excel in their respective fields and contribute positively to society.</p>
-                    
-                    <h4>Campus Highlights</h4>
-                    <ul>
-                        <li>State-of-the-art laboratories and research facilities</li>
-                        <li>Modern infrastructure with smart classrooms</li>
-                        <li>Extensive library resources</li>
-                        <li>Vibrant student community with diverse cultural backgrounds</li>
-                        <li>Strong industry connections and placement opportunities</li>
-                    </ul>
-                </div>
+                    <p style="font-family: 'Georgia', serif; text-align: justify;">
+                        Established in 1984, B.S. Abdur Rahman Crescent Institute of Science and Technology, situated in Chennai near Tambaram, is a distinguished institution with a 38-year legacy of academic excellence. Our intellectual hub challenges conventional thinking, fostering a passion for redefining learning. With top- notch education, a green campus, and vibrant student life, we provide a conducive environment for holistic development.
+                        Our diverse educational programs and student development clubs create a community that nurtures personal and professional growth, making our institution a lifelong home.
+                                      </p>         <br>
                 
                 <div class="crescent-stats">
                     <div class="stat-card">
@@ -285,182 +291,254 @@
         </div>
     </section>
 
+<!-- General Guidelines Section -->
+<section id="guidelines" class="guidelines">
+    <div class="section-header">
+        <h2>General Guidelines</h2>
+    </div>
+    
+    <div class="guidelines-container">
+        <div class="guidelines-content">
+            <h3>Event Participation Rules</h3>
 
-    <!-- General Guidelines Section -->
-    <section id="guidelines" class="guidelines">
-        <div class="section-header">
-            <h2>General Guidelines</h2>
-        </div>
-        
-        <div class="guidelines-container">
-            <div class="guidelines-content">
-                <h3>Event Participation Rules</h3>
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Registration Requirements</h4>
-                        <p>All participants must register beforehand through the online registration portal. On-spot registrations will be subject to availability and additional fees.</p>
-                    </div>
-                </div>
-                
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Team Formation</h4>
-                        <p>Teams should consist of 2-4 members for group events. Individual participants are welcome for solo events.</p>
-                    </div>
-                </div>
-                
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Dress Code</h4>
-                        <p>Participants are expected to dress in smart casuals. College ID cards are mandatory for all participants.</p>
-                    </div>
-                </div>
-                
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Judging Criteria</h4>
-                        <p>All events will be judged based on innovation, technical accuracy, presentation skills, and practical implementation. The decision of judges will be final.</p>
-                    </div>
-                </div>
-                
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Code of Conduct</h4>
-                        <p>Participants are expected to maintain the decorum of the institution. Any misconduct will lead to immediate disqualification.</p>
-                    </div>
-                </div>
-                
-                <div class="guideline-item">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="guideline-text">
-                        <h4>Certificates</h4>
-                        <p>Participation certificates will be provided to all registered participants. Winners will receive additional merit certificates and prizes.</p>
-                    </div>
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-user-edit"></i></div>
+                <div class="guideline-text">
+                    <h4>Registration Requirements</h4>
+                    <p>All participants must register beforehand through the online registration portal. On-spot registrations will be subject to availability and additional fees.</p>
                 </div>
             </div>
-            
-            <div class="guidelines-image">
-                <div class="guideline-stat-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Punctuality</h3>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-users"></i></div>
+                <div class="guideline-text">
+                    <h4>Team Formation</h4>
+                    <p>Teams should consist of 2-4 members for group events. Individual participants are welcome for solo events.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-tshirt"></i></div>
+                <div class="guideline-text">
+                    <h4>Dress Code</h4>
+                    <p>Participants are expected to dress in smart casuals. College ID cards are mandatory for all participants.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-balance-scale"></i></div>
+                <div class="guideline-text">
+                    <h4>Judging Criteria</h4>
+                    <p>All events will be judged based on innovation, technical accuracy, presentation skills, and practical implementation. The decision of judges will be final.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="guideline-text">
+                    <h4>Code of Conduct</h4>
+                    <p>Participants are expected to maintain the decorum of the institution. Any misconduct will lead to immediate disqualification.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-certificate"></i></div>
+                <div class="guideline-text">
+                    <h4>Certificates</h4>
+                    <p>Participation certificates will be provided to all registered participants. Winners will receive additional merit certificates and prizes.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-clock"></i></div>
+                <div class="guideline-text">
+                    <h4>Punctuality</h4>
                     <p>Participants must report 30 minutes before their event.</p>
                 </div>
-                
-                <div class="guideline-stat-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Electronics</h3>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="guideline-text">
+                    <h4>Electronics</h4>
                     <p>Mobile phones must be silenced during all events.</p>
                 </div>
-                
-                <div class="guideline-stat-card">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Equipment</h3>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-laptop"></i></div>
+                <div class="guideline-text">
+                    <h4>Equipment</h4>
                     <p>Bring your own laptops for coding and design events.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="organizers" id="organizers">
-        <div class="section-header">
-            <h2>Organizers</h2>
         </div>
+    </div>
+</section>
+    
 
-        <div class="coordinator-category">
-            Faculty Coordinators
-        </div>
+<!-- organizers -->
+<style>
+    .coordinator-avatar img {
+        width: 100px;  /* Adjust size as needed */
+        height: 100px; /* Ensure uniform shape */
+        border-radius: 50%; /* Makes it a circle */
+        object-fit: cover; /* Ensures image fills without distortion */
+        border: 2px solid #ddd; /* Optional: Adds a subtle border */
+        display: block;
+        margin: 0 auto;
+    }
+</style>
 
-        <div class="coordinator-cards">
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>[ASST PROFESSOR NAME]</h3>
-                <p>FACULTY COORDINATOR</p>
+<section class="organizers" id="organizers">
+    <div class="section-header">
+        <h2>Organizers</h2>
+    </div>
+
+    <div class="coordinator-category">
+        Faculty Coordinators
+    </div>
+
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/dean.jpeg" alt="Dean SECS" onerror="this.src='placeholder.jpg';">
             </div>
-
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>[HOD-EEE NAME]</h3>
-                <p>CONVENOR</p>
-            </div>
-
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <h3>[DEAN-SECS NAME]</h3>
-                <p>CONVENOR</p>
-            </div>
-        </div>
-
-        <div class="coordinator-category">
-            Student Coordinators
+            <h3>Dr. C. Tharini</h3>
+            <p>DEAN-SECS</p>
+            <p>CONVENOR</p>
         </div>
 
-        <div class="coordinator-cards">
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h3>[TREASURER NAME]</h3>
-                <p>TREASURER</p>
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/hod.png" alt="HOD EEE" onerror="this.src='placeholder.jpg';">
             </div>
-
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h3>[JOINT SECRETARY NAME]</h3>
-                <p>JOINT SECRETARY</p>
-            </div>
-
-            <div class="coordinator-card">
-                <div class="coordinator-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                <h3>[GENERAL SECRETARY NAME]</h3>
-                <p>GENERAL SECRETARY</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="sponsors" id="sponsors">
-        <div class="section-header">
-            <h2>Sponsors</h2>
+            <h3>Dr. S.Jennathu Beevi</h3>
+            <p>HOD-EEE </p>
+            <p>CONVENOR</p>
         </div>
 
-        <div class="sponsor-cards">
-            <div class="sponsor-card">
-                <div class="sponsor-logo">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-                <h3>[SPONSOR 1 NAME]</h3>
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/clss_adviser1.png" alt="Assistant Professor" onerror="this.src='placeholder.jpg';">
             </div>
-
-            <div class="sponsor-card">
-                <div class="sponsor-logo">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <h3>[SPONSOR 2 NAME]</h3>
-            </div>
-
-            <div class="sponsor-card">
-                <div class="sponsor-logo">
-                    <i class="fas fa-atom"></i>
-                </div>
-                <h3>[SPONSOR 3 NAME]</h3>
-            </div>
+            <h3>Dr. K.R. Shanmuga Vadivu</h3>
+            <p>Assistant Professor</p>
+            <p>FACULTY COORDINATOR</p>
         </div>
-    </section>
- 
+    </div>
+
+    <div class="coordinator-category">
+        Student Coordinators
+    </div>
+
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/shams.jpg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Shams Tabrez Hussain A</h3>
+            <p>GENERAL SECRETARY</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/jahanger.png" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Jahanger J</h3>
+            <p>JOINT SECRETARY</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/sumaiya.PNG" alt="Treasurer" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Sumayathul Haire S</h3>
+            <p>TREASURER</p>
+        </div>
+    </div>
+    <div class="coordinator-category">
+        Designers
+    </div>
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/shoib.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Shoaib A</h3>
+            <p>Sr.Designer</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/karthik.jpg" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Karthik</h3>
+            <p>Jr.Designer</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/afridy.jpg" alt="Treasurer" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Afridy</h3>
+            <p>Jr.Designer</p>
+        </div>
+    </div>
+    <div class="coordinator-category">
+        Website Developer
+    </div>
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/rahul.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Rahul A</h3>
+            <p>Sr.Web designer</p>
+        </div>
+</section>
+
+<style>
+    .sponsors {
+        text-align: center;
+    }
+
+    .sponsor-cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .sponsor-logo img {
+        width: 150px; /* Set fixed width */
+        height: 150px; /* Set fixed height */
+        object-fit: contain; /* Ensures image fits without distortion */
+        display: block;
+    }
+</style>
+
+<section class="sponsors" id="sponsors">
+    <div class="section-header">
+        <h2>Sponsors</h2>
+    </div>
+
+    <div class="sponsor-cards">
+        <div class="sponsor-logo">
+            <img src="img/Poorvika-logo.webp" alt="Sponsor 1 Logo">
+        </div>
+
+        <div class="sponsor-logo">
+            <img src="img/Poorvika-logo.webp" alt="Sponsor 2 Logo">
+        </div>
+
+        <div class="sponsor-logo">
+            <img src="img/Poorvika-logo.webp" alt="Sponsor 3 Logo">
+        </div>
+    </div>
+</section>
+
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
@@ -473,12 +551,26 @@
                     showcase your skills, and connect with industry experts.
                 </p>
 
+                <style>
+                    .social-links {
+                        display: flex;
+                        justify-content: center; /* Centers horizontally */
+                        align-items: center; /* Centers vertically if needed */
+                        gap: 15px; /* Adds space between icons */
+                    }
+                
+                    .social-links a {
+                        font-size: 24px; /* Adjust icon size */
+                        text-decoration: none;
+                        color: rgb(255, 255, 255); /* Change color if needed */
+                    }
+                </style>
+                
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://maps.app.goo.gl/VRDzn1TJ4gpBWVCD7"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://www.instagram.com/cygnus_2025?igsh=YWtzMzI1aTI3azI3"><i class="fab fa-instagram"></i></a>
                 </div>
+                
             </div>
 
             <div class="footer-contact">
@@ -486,32 +578,21 @@
                 <ul class="contact-info">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        [College Address]
+                        
+GST Road, Vandalur, Chennai 600 048. Tamilnadu. INDIA 
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
-                        [Phone Number]
+                        +91 8903989413 <br>
+                        +91 8925291464 
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
-                        [Email Address]
+                        cygnus25.eee@gmail.com
                     </li>
                 </ul>
             </div>
 
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul class="quick-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about-crescent">About Crescent</a></li>
-                    <li><a href="#about-event">About Event</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#guidelines">Guidelines</a></li>
-                    <li><a href="#organizers">Organizers</a></li>
-                    <li><a href="#sponsors">Sponsors</a></li>
-                    <li><a href="#registration">Register</a></li>
-                </ul>
-            </div>
         </div>
 
         <div class="copyright">
