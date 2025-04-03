@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - CYGNUS'25</title>
+
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .event-details-page {
+            padding: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .event-rules,
+        .event-coordinators {
+            margin-bottom: 30px;
+        }
+
+        .event-rules h3,
+        .event-coordinators h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .event-rules ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .coordinator-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .coordinator-card {
+            width: 300px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .coordinator-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .coordinator-avatar img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .coordinator-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .coordinator-card p {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="html-code.html" class="logo">
+            <i class="fas fa-arrow-left logo-icon"></i>
+            Back to CYGNUS'25
+        </a>
+    </header>
+
+    <section class="event-details-page">
+        <div class="section-header">
+            <h2 id="event-title">Event Details</h2>
+        </div>
+
+        <div class="event-rules">
+            <h3>Rules and Regulations</h3>
+            <ul id="event-rules-list">
+                <li>Rule 1: To be updated.</li>
+                <li>Rule 2: To be updated.</li>
+                <li>Rule 3: To be updated.</li>
+                <li>Rule 4: To be updated.</li>
+            </ul>
+        </div>
+
+        <div class="event-coordinators">
+            <h3>Event Coordinators</h3>
+            <div class="coordinator-cards">
+                <div class="coordinator-card">
+                    <div class="coordinator-avatar">
+                        <img src="coordinator1.jpg" alt="Coordinator 1">
+                    </div>
+                    <h4>Coordinator 1 Name</h4>
+                    <p>Designation</p>
+                    <p>Contact: [phone number]</p>
+                    <p>Email: [email address]</p>
+                </div>
+
+                <div class="coordinator-card">
+                    <div class="coordinator-avatar">
+                        <img src="coordinator2.jpg" alt="Coordinator 2">
+                    </div>
+                    <h4>Coordinator 2 Name</h4>
+                    <p>Designation</p>
+                    <p>Contact: [phone number]</p>
+                    <p>Email: [email address]</p>
+                </div>
+
+                <div class="coordinator-card">
+                    <div class="coordinator-avatar">
+                        <img src="coordinator3.jpg" alt="Coordinator 3">
+                    </div>
+                    <h4>Coordinator 3 Name</h4>
+                    <p>Designation</p>
+                    <p>Contact: [phone number]</p>
+                    <p>Email: [email address]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const event = urlParams.get('event');
+            let eventTitle = '';
+            let eventRules = [];
+
+            switch (event) {
+                case 'paper':
+                    eventTitle = 'Paper Presentation Details';
+                    eventRules = [
+                        "Submit your abstract by [date].",
+                        "Full paper must be submitted by [date].",
+                        "Presentation time is 10 minutes."
+                    ];
+                    break;
+                case 'project':
+                    eventTitle = 'Project Presentation Details';
+                    eventRules = [
+                        "Project must be working.",
+                        "Demonstration time is 15 minutes.",
+                        "Judges' decision is final."
+                    ];
+                    break;
+                case 'circuit':
+                    eventTitle = 'CircuitXplorer Details';
+                    eventRules = [
+                        "Teams of 2-3 participants.",
+                        "All components will be provided.",
+                        "Time limit: 2 hours."
+                    ];
+                    break;
+                case 'ampere':
+                    eventTitle = 'Ampere Arena Details';
+                    eventRules = [
+                        "Individual participation.",
+                        "Multiple choice questions.",
+                        "Time limit: 1 hour."
+                    ];
+                    break;
+                case 'tesla':
+                    eventTitle = 'Tesla vs Edison Details';
+                    eventRules = [
+                        "Teams of 2 participants.",
+                        "Debate or Quiz format.",
+                        "Topic will be given on the spot."
+                    ];
+                    break;
+                case 'biryani':
+                    eventTitle = 'Watt A Biryani Details';
+                    eventRules = [
+                        "Team of 4-5 participants.",
+                        "Biryani making challenge.",
+                        "Ingredients will be provided."
+                    ];
+                    break;
+                case 'talent':
+                    eventTitle = 'FluX Your Talent Details';
+                    eventRules = [
+                        "Individual or group performance.",
+                        "Time limit: 5 minutes.",
+                        "Any talent can be showcased."
+                    ];
+                    break;
+                case 'mini':
+                    eventTitle = 'Mini Mania Details';
+                    eventRules = [
+                        "Individual participation.",
+                        "Series of mini-games.",
+                        "Prizes for winners."
+                    ];
+                    break;
+                default:
+                    eventTitle = 'Event Details';
+                    eventRules = ["Details not available."];
+            }
+
+            document.getElementById('event-title').innerText = eventTitle;
+            const rulesList = document.getElementById('event-rules-list');
+            rulesList.innerHTML = ''; // Clear existing list
+            eventRules.forEach(rule => {
+                const li = document.createElement('li');
+                li.innerText = rule;
+                rulesList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+
+</html>

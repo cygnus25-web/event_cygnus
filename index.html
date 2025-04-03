@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYGNUS'25 - Electrifying Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-bolt logo-icon"></i>
+            CYGNUS'25
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li><a href="#registration">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <span class="hero-tag">Electrifying Technical Fest</span>
+        <h1>CYGNUS'<span>25</span></h1>
+        <h2>Unleash Your Potential</h2>
+
+        <div class="event-details">
+            <div class="detail-item">
+                <i class="fas fa-calendar-alt"></i>
+                22nd April 2025
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                College Campus
+            </div>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" class="countdown">
+            Event starts in: <span id="timer"></span>
+        </div>
+
+        <a href="#registration" class="cta-button">Register Now</a>
+    </section>
+
+    <section class="events" id="events">
+        <div class="section-header">
+            <h2>Events</h2>
+        </div>
+
+        <div class="event-category">
+            Technical Events
+        </div>
+
+        <div class="event-cards">
+            <div class="event-card">
+                <i class="fas fa-file-alt"></i>
+                <h3>Paper Presentation</h3>
+                <p>Present your research or innovative ideas in electrical and electronics engineering.</p>
+                <div class="event-overlay">
+                    <p>Timing: 10:00 AM - 12:00 PM</p>
+                    <a href="event-details.html?event=paper" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Project Presentation</h3>
+                <p>Showcase your working project with real-world applications.</p>
+                <div class="event-overlay">
+                    <p>Timing: 01:00 PM - 03:00 PM</p>
+                    <a href="event-details.html?event=project" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-circuit"></i>
+                <h3>CircuitXplorer</h3>
+                <p>A challenge involving circuit design, debugging, or simulation.</p>
+                <div class="event-overlay">
+                    <p>Timing: 03:30 PM - 05:30 PM</p>
+                    <a href="event-details.html?event=circuit" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Ampere Arena</h3>
+                <p>Technical quiz or competition related to electrical concepts.</p>
+                <div class="event-overlay">
+                    <p>Timing: 11:00 AM - 12:30 PM</p>
+                    <a href="event-details.html?event=ampere" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Tesla vs Edison</h3>
+                <p>A debate or quiz focusing on famous electrical pioneers and their contributions.</p>
+                <div class="event-overlay">
+                    <p>Timing: 02:00 PM - 04:00 PM</p>
+                    <a href="event-details.html?event=tesla" class="read-more-button">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="event-category">
+            Non-Technical Events
+        </div>
+
+        <div class="event-cards">
+            <div class="event-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Watt A Biryani</h3>
+                <p>A fun-filled food challenge, likely involving biryani.</p>
+                <div class="event-overlay">
+                    <p>Timing: 02:00 PM - 04:00 PM</p>
+                    <a href="event-details.html?event=biryani" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-microphone"></i>
+                <h3>FluX Your Talent</h3>
+                <p>A platform to showcase talents like singing, dancing, or mimicry.</p>
+                <div class="event-overlay">
+                    <p>Timing: 02:00 PM - 04:00 PM</p>
+                    <a href="event-details.html?event=talent" class="read-more-button">Read More</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Mini Mania</h3>
+                <p>A set of fun mini-games and exciting activities.</p>
+                <div class="event-overlay">
+                    <p>Timing: 04:00 PM - 06:00 PM</p>
+                    <a href="event-details.html?event=mini" class="read-more-button">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="organizers" id="organizers">
+        <div class="section-header">
+            <h2>Organizers</h2>
+        </div>
+
+        <div class="coordinator-category">
+            Faculty Coordinators
+        </div>
+
+        <div class="coordinator-cards">
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>[ASST PROFESSOR NAME]</h3>
+                <p>FACULTY COORDINATOR</p>
+            </div>
+
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>[HOD-EEE NAME]</h3>
+                <p>CONVENOR</p>
+            </div>
+
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>[DEAN-SECS NAME]</h3>
+                <p>CONVENOR</p>
+            </div>
+        </div>
+
+        <div class="coordinator-category">
+            Student Coordinators
+        </div>
+
+        <div class="coordinator-cards">
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>[TREASURER NAME]</h3>
+                <p>TREASURER</p>
+            </div>
+
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>[JOINT SECRETARY NAME]</h3>
+                <p>JOINT SECRETARY</p>
+            </div>
+
+            <div class="coordinator-card">
+                <div class="coordinator-avatar">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>[GENERAL SECRETARY NAME]</h3>
+                <p>GENERAL SECRETARY</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors" id="sponsors">
+        <div class="section-header">
+            <h2>Sponsors</h2>
+        </div>
+
+        <div class="sponsor-cards">
+            <div class="sponsor-card">
+                <div class="sponsor-logo">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>[SPONSOR 1 NAME]</h3>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-logo">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>[SPONSOR 2 NAME]</h3>
+            </div>
+
+            <div class="sponsor-card">
+                <div class="sponsor-logo">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>[SPONSOR 3 NAME]</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="registration" id="registration">
+        <div class="section-header">
+            <h2>Registration</h2>
+        </div>
+
+        <div class="registration-intro">
+            Join us at CYGNUS'25 for an electrifying experience. Register now to participate in our technical and
+            non-technical events.
+        </div>
+
+        <form class="registration-form">
+            <div class="form-group">
+                <label for="fullname">Full Name*</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="college">College Name*</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year of Study</label>
+                    <input type="text" id="year" name="year">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Select Events of Interest:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="paper" name="events" value="paper">
+                        <label for="paper">Paper Presentation</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="project" name="events" value="project">
+                        <label for="project">Project Presentation</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="circuit" name="events" value="circuit">
+                        <label for="circuit">CircuitXplorer</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="ampere" name="events" value="ampere">
+                        <label for="ampere">Ampere Arena</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tesla" name="events" value="tesla">
+                        <label for="tesla">Tesla vs Edison</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="biryani" name="events" value="biryani">
+                        <label for="biryani">Watt A Biryani</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="talent" name="events" value="talent">
+                        <label for="talent">FluX Your Talent</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="mini" name="events" value="mini">
+                        <label for="mini">Mini Mania</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>
+                    <i class="fas fa-bolt"></i>
+                    CYGNUS'25
+                </h2>
+                <p>
+                    Join us for an electrifying technical fest experience! Participate in various events,
+                    showcase your skills, and connect with industry experts.
+                </p>
+
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        [College Address]
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        [Phone Number]
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        [Email Address]
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#organizers">Organizers</a></li>
+                    <li><a href="#sponsors">Sponsors</a></li>
+                    <li><a href="#registration">Register</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 CYGNUS'25. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
