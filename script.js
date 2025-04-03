@@ -52,3 +52,52 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCountdown(); // Initial call
     setInterval(updateCountdown, 1000); // Update every second
 });
+
+// countdown style
+document.addEventListener('DOMContentLoaded', function() {
+    // Set your target date here
+    const targetDate = new Date("apr 21, 2025 09:30:00").getTime();
+    
+    // Update the countdown every second
+    const countdownInterval = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        // If countdown is finished
+        if (distance <= 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+            document.getElementById('event-name-display').textContent = 'The Event Has Arrived!';
+            return;
+        }
+        
+        // Calculate time units
+        const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+        const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+        const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+        const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        
+        // Update the display with animation
+        updateDigit('days', days);
+        updateDigit('hours', hours);
+        updateDigit('minutes', minutes);
+        updateDigit('seconds', seconds);
+    }, 1000);
+    
+    // Function to update digits with a flip effect
+    function updateDigit(id, newValue) {
+        const element = document.getElementById(id);
+        if (element.textContent !== newValue) {
+            element.style.transition = 'transform 0.3s';
+            element.style.transform = 'rotateX(90deg)';
+            
+            setTimeout(() => {
+                element.textContent = newValue;
+                element.style.transform = 'rotateX(0deg)';
+            }, 150);
+        }
+    }
+});
