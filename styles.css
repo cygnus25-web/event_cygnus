@@ -92,6 +92,12 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
 }
+.hero-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
 
 .hero-tag {
     display: inline-block;
@@ -183,58 +189,52 @@ nav ul li a:hover::after {
 #about-event .container {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 #about-event .event-details {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 40px;
     border-radius: 10px;
-    margin: 0;
+    flex-wrap: wrap;
 }
 
 #about-event .event-info {
     flex: 2;
     padding-right: 40px;
+    text-align: justify;
 }
 
-#about-event .event-info h3 {
-    color: #ffc107;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-}
-
-#about-event .event-info h4 {
-    color: #ffc107;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-#about-event .event-info ul {
-    list-style-type: disc;
-    padding-left: 30px;
-    margin-bottom: 25px;
-}
-
-#about-event .event-info ul li {
-    margin-bottom: 8px;
+#about-event .event-info .event-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #about-event .event-stats {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
+    text-align: center;
 }
 
 #about-event .stat-card {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 20px;
     border-radius: 10px;
-    text-align: center;
     transition: transform 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -246,14 +246,27 @@ nav ul li a:hover::after {
 #about-event .stat-card i {
     font-size: 3rem;
     color: #ffc107;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #about-event .stat-card h3 {
     color: #f5f5dc;
     font-size: 2.2rem;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
+
+@media screen and (max-width: 768px) {
+    #about-event .event-details {
+        flex-direction: column;
+        padding: 25px;
+    }
+    
+    #about-event .event-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
 
 /* Events Section - improved card grid */
 .events {
@@ -479,107 +492,6 @@ nav ul li a:hover::after {
     color: #ffc107;
     font-size: 1.2rem;
     line-height: 1.3;
-}
-
-/* Registration Form - improved spacing and alignment */
-.registration {
-    padding: 80px 40px;
-}
-
-.registration-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 50px;
-    color: #d4c9bc;
-    line-height: 1.6;
-    font-size: 1.1rem;
-}
-
-.registration-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: rgba(60, 45, 30, 0.7);
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    color: #ffc107;
-    font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"] {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgba(80, 60, 45, 0.8);
-    color: #f5f5dc;
-    font-size: 1rem;
-}
-
-.form-group input:focus {
-    outline: 2px solid #ffc107;
-    background-color: rgba(90, 70, 55, 0.8);
-}
-
-.form-row {
-    display: flex;
-    gap: 25px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-.checkbox-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.checkbox-item {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-item input {
-    margin-right: 10px;
-    transform: scale(1.2);
-}
-
-.checkbox-item label {
-    margin-bottom: 0;
-}
-
-.submit-btn {
-    display: block;
-    width: 100%;
-    background-color: #ffc107;
-    color: #3c2a1e;
-    border: none;
-    padding: 16px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 30px;
-}
-
-.submit-btn:hover {
-    background-color: #ffca28;
-    transform: translateY(-2px);
 }
 
 /* Footer - improved alignment */
@@ -837,5 +749,505 @@ footer {
     .countdown {
         font-size: 1.1rem;
         padding: 10px 20px;
+    }
+}
+
+/* Button Container for better alignment */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.register-btn {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f4e1c6;
+    padding: 15px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: rgba(45, 31, 21, 0.449);
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 18px;
+    border: 3px solid #e3b23c;
+    box-shadow: 0 0 10px #e3b23c;
+    animation: ledBlink 1s infinite alternate;
+}
+
+@keyframes ledBlink {
+    0% { border-color: #e3b23c; box-shadow: 0 0 10px #e3b23c; }
+    50% { border-color: #d38d5f; box-shadow: 0 0 20px #d38d5f; }
+    100% { border-color: #e3b23c; box-shadow: 0 0 10px #e3b23c; }
+}
+
+/* About Crescent Section Styles */
+.about-crescent {
+    padding: 80px 40px;
+}
+
+.about-crescent .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-crescent .crescent-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-crescent .crescent-info {
+    flex: 2;
+    padding-right: 40px;
+}
+
+.about-crescent .crescent-info h3 {
+    color: #ffc107;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.about-crescent .crescent-info h4 {
+    color: #ffc107;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.about-crescent .crescent-info ul {
+    list-style-type: disc;
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
+.about-crescent .crescent-info ul li {
+    margin-bottom: 8px;
+}
+
+.about-crescent .crescent-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-crescent .stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-crescent .stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-crescent .stat-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.about-crescent .stat-card h3 {
+    color: #f5f5dc;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+/* Guidelines Section Styles */
+.guidelines {
+    padding: 80px 40px;
+}
+
+.guidelines-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.guidelines-content {
+    flex: 2;
+}
+
+.guidelines-content h3 {
+    color: #ffc107;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.guideline-item {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.guideline-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.guideline-item i {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.guideline-text h4 {
+    color: #ffc107;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.guideline-text p {
+    color: #d4c9bc;
+}
+
+.guidelines-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.guideline-stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guideline-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.guideline-stat-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.guideline-stat-card h3 {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .guidelines-container {
+        flex-direction: column;
+    }
+    
+    .guidelines-image {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .guideline-stat-card {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-crescent .crescent-details {
+        flex-direction: column;
+    }
+    
+    .about-crescent .crescent-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .guideline-stat-card {
+        min-width: 100%;
+    }
+    
+    .guidelines-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .guidelines-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .guideline-stat-card {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-crescent .crescent-details {
+        padding: 10px;
+    }
+    
+    .about-crescent .crescent-info {
+        text-align: center;
+    }
+}
+
+/* Video Background Styles */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 42, 30, 0.8); /* Adjusted to match your site's color scheme */
+    z-index: 1;
+}
+
+/* Modify existing body style to accommodate the video background */
+body {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure all sections have proper transparency */
+section, 
+header, 
+footer {
+    background-color: rgba(60, 42, 30, 0.5); /* Semi-transparent to show video */
+    backdrop-filter: blur(3px); /* Slight blur effect for better text readability */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+header {
+    background-color: rgba(126, 63, 0, 0.9); /* Keeping header more opaque for navigation */
+}
+
+/* Adjust specific sections to have different opacities if needed */
+.hero {
+    background-color: rgba(60, 42, 30, 0.2); /* More transparent hero section */
+}
+
+footer {
+    background-color: rgba(45, 31, 21, 0.9); /* More opaque footer */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #backgroundVideo {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.full-image {
+    width: 100%;  /* Makes the image responsive */
+    max-width: 1250px;  /* Ensures it doesn’t stretch beyond its actual size */
+    height: auto;  /* Maintains aspect ratio */
+    display: block;  /* Removes extra spacing */
+    margin: 0 auto;  /* Centers the image */
+}
+
+/* countdown style */
+
+.countdown-container {
+    text-align: center;
+    max-width: 700px;
+    background-color: #efeeecb0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 8px solid #8b7356;
+}
+
+h7 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #5a4b3a;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+}
+
+.countdown-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5a4b3a;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-value {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    perspective: 500px;
+    margin-bottom: 10px;
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.flip-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #33281f;
+    color: #f7ebd5;
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'Orbitron', 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.flip-panel:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #5a4b3a;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #453520;
+}
+
+/* Vintage decoration */
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #8b7356;
+}
+
+.top-left {
+    top: -8px;
+    left: -8px;
+    border-radius: 0 0 30px 0;
+}
+
+.top-right {
+    top: -8px;
+    right: -8px;
+    border-radius: 0 0 0 30px;
+}
+
+.bottom-left {
+    bottom: -8px;
+    left: -8px;
+    border-radius: 0 30px 0 0;
+}
+
+.bottom-right {
+    bottom: -8px;
+    right: -8px;
+    border-radius: 30px 0 0 0;
+}
+
+@media (max-width: 600px) {
+    .countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-value {
+        width: 70px;
+        height: 80px;
+    }
+
+    .flip-panel {
+        font-size: 3rem;
     }
 }
