@@ -502,6 +502,12 @@ body.menu-open {
     max-width: 100%;
     height: auto;
 }
+@media (max-width: 600px) {
+    .hero-image {
+        width: 100vw; /* full viewport width */
+        height: auto;
+    }
+}
 .hero-tag {
     display: inline-block;
     padding: 8px 20px;
