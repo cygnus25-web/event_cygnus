@@ -43,7 +43,7 @@ section {
 }
 
 /* vintage front style */
-.vintage-title {
+/* .vintage-title {
     color: rgb(224, 235, 6);
     font-size: 30px;
     text-shadow: 2px 2px 4px #ffffffdf;
@@ -60,47 +60,25 @@ section {
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
+} */
+
 @font-face {
     font-family: 'Universidad';
     src: url('font/universidad-personal-use.bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
-  
-  .vintage-university-title {
+}
+.vintage-university-title {
     font-family: 'Universidad', serif;
     color: #ffffff;
+    font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 3px;
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    text-align: center;
     margin-bottom: 20px;
-    font-size: 38px;
-    letter-spacing: 4.5px;
-  }
-  
-  @media (max-width: 600px) {
-    .vintage-university-title {
-      font-size: 24px;
-      letter-spacing: 2px;
-      line-height: 1.3;
-    }
-  
-    .vintage-university-title .line-top,
-    .vintage-university-title .line-bottom {
-      display: block;
-    }
-  
-    .vintage-university-title .line-bottom {
-      margin-top: 5px;
-    }
-  }
-  
-  
-
-
-
+}
+ 
 
 /* Header & Navigation - improved alignment */
 /* Vintage Navigation Styles */
@@ -552,6 +530,28 @@ body.menu-open {
     margin-bottom: 40px;
     line-height: 1.5;
     animation: fadeIn 1.5s ease-in-out;
+}
+.hero h5 {
+    font-size: 2rem;
+    font-stretch: expanded; /* optional: widen font */
+    letter-spacing: 1px; /* increase space between letters */
+    margin-bottom: 15px;
+    color: #f5f5dc;
+    animation: slideInDown 1s ease-out;
+    line-height: 1.3;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.hero h5 span {
+    color: #ffc107;
+}
+
+/* Responsive: Break after the 3rd word on small screens */
+@media (max-width: 600px) {
+    .hero h5 .break {
+        display: block;
+    }
 }
 
 .event-details {
