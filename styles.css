@@ -70,22 +70,24 @@ section {
 .vintage-university-title {
     font-family: 'Universidad', serif;
     color: #ffffff;
-    font-size: 36px;
+    font-size: 38px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4.5px; /* Wider letter spacing */
     text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Responsive font size for small screens */
+/* Responsive font size and spacing for smaller screens */
 @media (max-width: 600px) {
     .vintage-university-title {
-        font-size: 22px;
-        letter-spacing: 2px;
+        font-size: 24px;
+        letter-spacing: 3px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 }
+
 
 
 
