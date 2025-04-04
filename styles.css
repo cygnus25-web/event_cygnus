@@ -1471,16 +1471,18 @@ footer {
 
 .countdown-container {
     text-align: center;
-    max-width: 90%;
     width: 100%;
+    max-width: 700px;
     background-color: #eed7aab0;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
     position: relative;
     border: 8px solid #8b7356;
-    margin: auto;
+    margin: 2rem auto; /* center horizontally */
+    box-sizing: border-box;
 }
+
 
 h7 {
     margin-top: 0;
