@@ -1508,37 +1508,4 @@ h7 {
     100% { transform: translateX(0%); }
 }
 
-/* auto adjustment for display */
-.page-body {
-    font-size: 1rem;
-    padding: 10px;
-  }
-  
-  .main-wrapper {
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-  }
-  
-  /* Tablet screens */
-  @media (min-width: 768px) {
-    .main-wrapper {
-      max-width: 720px;
-      margin: auto;
-    }
-  }
-  
-  /* Desktop screens */
-  @media (min-width: 1024px) {
-    .main-wrapper {
-      max-width: 960px;
-    }
-  }
-  
-  /* Large desktops */
-  @media (min-width: 1200px) {
-    .main-wrapper {
-      max-width: 1140px;
-    }
-  }
   
