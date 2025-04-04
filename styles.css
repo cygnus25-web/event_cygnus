@@ -42,6 +42,44 @@ section {
     margin: 0 auto;
 }
 
+/* vintage front style */
+.vintage-title {
+    color: rgb(224, 235, 6);
+    font-size: 30px;
+    text-shadow: 2px 2px 4px #ffffffdf;
+    font-family: 'Cinzel Decorative', 'Old Standard TT', 'Georgia', serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.vintage-subtitle {
+    color: rgb(197, 112, 37);
+    font-size: 18px;
+    font-family: 'Playfair Display', 'Old Standard TT', 'Georgia', serif;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+@font-face {
+    font-family: 'Universidad';
+    src: url('font/universidad-personal-use.bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.vintage-university-title {
+    font-family: 'Universidad', serif;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+
+
 /* Header & Navigation - improved alignment */
 /* Vintage Navigation Styles */
 header {
@@ -464,7 +502,6 @@ body.menu-open {
     max-width: 100%;
     height: auto;
 }
-
 .hero-tag {
     display: inline-block;
     padding: 8px 20px;
@@ -528,6 +565,19 @@ body.menu-open {
 .cta-button:hover {
     background-color: #ffca28;
 }
+/* Increase size for small screens */
+@media (max-width: 600px) {
+    .hero-image {
+        max-width: 80%; /* Increase size */
+    }
+}
+
+/* Further increase for very small screens */
+@media (max-width: 400px) {
+    .hero-image {
+        max-width: 90%; /* Even larger for extra small screens */
+    }
+}
 
 /* Section Headers - consistent styling */
 .section-header {
@@ -549,19 +599,6 @@ body.menu-open {
     height: 3px;
     background-color: #ffc107;
     margin: 15px auto 0;
-}
-/* Increase size for small screens */
-@media (max-width: 768px) {
-    .hero-image {
-        max-width: 90%; /* Increase size slightly */
-    }
-}
-
-/* Further increase for very small screens */
-@media (max-width: 480px) {
-    .hero-image {
-        max-width: 95%; /* Even larger for extra small screens */
-    }
 }
 
 /* Wider Design with Original Colors - About CYGNUS Section */
