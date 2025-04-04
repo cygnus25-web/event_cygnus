@@ -78,6 +78,16 @@ section {
     margin-bottom: 20px;
 }
 
+/* Responsive font size for small screens */
+@media (max-width: 600px) {
+    .vintage-university-title {
+        font-size: 22px;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
 
 
 /* Header & Navigation - improved alignment */
