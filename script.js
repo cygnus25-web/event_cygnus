@@ -167,3 +167,135 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 })();
+
+// crescent about animation
+document.addEventListener("DOMContentLoaded", function() {
+    // Variables for carousel functionality
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    // Function to show a specific slide
+    function showSlide(n) {
+        // Remove active class from all slides and dots
+        carouselItems.forEach(item => item.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        // Set current slide index
+        currentSlide = (n + carouselItems.length) % carouselItems.length;
+        
+        // Add active class to current slide and dot
+        carouselItems[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+    
+    // Function to move to next slide
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+    
+    // Function to move to previous slide
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+    
+    // Start automatic slideshow
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+    
+    // Stop automatic slideshow
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+    
+    // Event listeners for controls
+    prevButton.addEventListener('click', function() {
+        prevSlide();
+        stopSlideshow();
+        startSlideshow();
+    });
+    
+    nextButton.addEventListener('click', function() {
+        nextSlide();
+        stopSlideshow();
+        startSlideshow();
+    });
+    
+    // Add click events to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            showSlide(index);
+            stopSlideshow();
+            startSlideshow();
+        });
+    });
+    
+    // Start the slideshow
+    startSlideshow();
+});
+
+// gallary animation
+document.addEventListener("DOMContentLoaded", function () {
+    const carousels = document.querySelectorAll('.carousel-container');
+
+    carousels.forEach((carouselContainer) => {
+        const carouselItems = carouselContainer.querySelectorAll('.carousel-item');
+        const dots = carouselContainer.querySelectorAll('.dot');
+        const prevButton = carouselContainer.querySelector('.prev');
+        const nextButton = carouselContainer.querySelector('.next');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(n) {
+            carouselItems.forEach(item => item.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            currentSlide = (n + carouselItems.length) % carouselItems.length;
+
+            carouselItems[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            stopSlideshow();
+            startSlideshow();
+        });
+
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            stopSlideshow();
+            startSlideshow();
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                stopSlideshow();
+                startSlideshow();
+            });
+        });
+
+        startSlideshow();
+    });
+});
