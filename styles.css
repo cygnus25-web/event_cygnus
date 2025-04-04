@@ -1927,16 +1927,17 @@ footer {
 }
 h7 {
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #5a4b3a;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem); /* Auto-adjust size */
+    font-size: clamp(1rem, 2vw, 2.5rem); /* Adjusted for small screens */
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
     font-family: 'Georgia', serif;
     text-align: center;
     word-wrap: break-word;
 }
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -1987,12 +1988,17 @@ h7 {
         font-size: 0.9rem;
     }
 }
-@media (max-width: 600px) {
+
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
     h7 {
-        font-size: 1.8rem; /* Reduce size for small screens */
+        font-size: 1rem; /* Minimized for very small screens */
         letter-spacing: 1px;
+        margin-bottom: 15px;
     }
 }
+
 
 
 
