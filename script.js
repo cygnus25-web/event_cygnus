@@ -102,58 +102,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-       // Mobile menu toggle
-       const hamburger = document.getElementById('hamburger-menu');
-       const navMenu = document.getElementById('nav-menu');
-       const navLinks = document.querySelectorAll('.nav-menu li a');
-       const header = document.getElementById('main-header');
-       
-       // Toggle mobile menu
-       hamburger.addEventListener('click', () => {
-           hamburger.classList.toggle('active');
-           navMenu.classList.toggle('active');
-           document.body.classList.toggle('no-scroll');
-       });
-       
-       // Close mobile menu when clicking on links
-       navLinks.forEach(link => {
-           link.addEventListener('click', () => {
-               hamburger.classList.remove('active');
-               navMenu.classList.remove('active');
-               document.body.classList.remove('no-scroll');
-               
-               // Set active class
-               navLinks.forEach(navLink => navLink.classList.remove('active'));
-               link.classList.add('active');
-           });
-       });
-       
-       // Header scroll effect
-       window.addEventListener('scroll', () => {
-           if (window.scrollY > 50) {
-               header.classList.add('scrolled');
-           } else {
-               header.classList.remove('scrolled');
-           }
-       });
-       
-       // Set active menu item based on scroll position
-       window.addEventListener('scroll', () => {
-           const sections = document.querySelectorAll('section');
-           const scrollPosition = window.scrollY + 150;
-           
-           sections.forEach(section => {
-               const sectionTop = section.offsetTop;
-               const sectionHeight = section.clientHeight;
-               const sectionId = section.getAttribute('id');
-               
-               if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                   navLinks.forEach(link => {
-                       link.classList.remove('active');
-                       if (link.getAttribute('href') === '#' + sectionId) {
-                           link.classList.add('active');
-                       }
-                   });
-               }
-           });
-       });
+ // Immediately Invoked Function Expression to avoid global scope pollution
+(function() {
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get elements
+        const hamburger = document.getElementById('hamburger-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        // Make sure elements exist before adding event listeners
+        if (!hamburger || !navMenu) {
+            console.error('Navigation elements not found');
+            return;
+        }
+        
+        // Toggle menu function
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            
+            // Log to confirm function is being called
+            console.log('Menu toggled');
+        }
+        
+        // Add click event to hamburger menu
+        hamburger.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInside = hamburger.contains(event.target) || navMenu.contains(event.target);
+            
+            if (!isClickInside && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+        
+        // Close menu when clicking nav links
+        const navLinks = document.querySelectorAll('.nav-menu li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (navMenu.classList.contains('active')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        // Add a fallback touch event for mobile devices
+        hamburger.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            toggleMenu();
+        });
+        
+        // Header shrink on scroll
+        const header = document.getElementById('main-header');
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+    });
+})();
