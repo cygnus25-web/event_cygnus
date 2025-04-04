@@ -1211,9 +1211,14 @@ footer {
     color: #d4c9bc;
     margin-bottom: 25px;
     line-height: 1.6;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* Adjusted for smoother scaling */
     max-width: 500px;
 }
+footer p {
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+}
+
 
 /* Social links with vintage styling */
 .social-links {
