@@ -53,7 +53,9 @@
         </div>
     </header>
     <br> <br>
-    
+
+  <!-- hero staring section   -->
+
     <section class="hero" id="hero">
         <h5 class="vintage-university-title">ELECTRICAL AND ELECTRONICS ENGINEERING</h5>
         <h5 style="
@@ -63,8 +65,7 @@
     letter-spacing: 1.5px;
     font-weight: bold;
     text-transform: uppercase;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-">PROUDLY PRESENTS</h5>
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">PROUDLY PRESENTS</h5>
         <h5  style="
         color: rgb(224, 235, 6);
         font-size: 30px;
@@ -72,8 +73,7 @@
         font-family: 'Cinzel Decorative', 'Old Standard TT', 'Georgia', serif;
         letter-spacing: 2px;
         font-weight: bold;
-        text-transform: uppercase;
-    ">A NATIONAL LEVEL SYMPOSIUM</h5><br>
+        text-transform: uppercase;">A NATIONAL LEVEL SYMPOSIUM</h5><br>
         <img src="img/cygnus1.png" alt="CYGNUS'25 Logo" class="hero-image"><br>
 
 
@@ -151,7 +151,7 @@
         <div class="event-showcase">
             <div class="event-content-wrapper">
                 <div class="event-info">
-                    <img src="img/cygnus’25.png" alt="CYGNUS Event" class="event-image">
+                    <img src="img/cygnus’25.png" alt="CYGNUS Event" class="event-image1">
                     <div class="event-description-container">
                         <p class="event-description">
                             CYGNUS is a National level Symposium that is conducted every year by the Department of Electrical and Electronics Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 8 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electrical and Electronics Engineering.
@@ -183,103 +183,153 @@
     </div>
 </section>
 
-    <section class="events" id="events">
+<!-- tech and non-tech event -->
+
+<section class="events" id="events">
+    <div class="container">
         <div class="section-header">
             <h2>Events</h2>
         </div>
 
-        <div class="event-category">
-            Technical Events
-        </div>
-
-        <div class="event-cards">
-            <div class="event-card">
-                <i class="fas fa-file-alt"></i>
-                <h3>Paper Presentation</h3>
-                <p>Present your research or innovative ideas in electrical and electronics engineering.</p>
-                <div class="event-overlay">
-                    <p>Timing: 10:00 AM - 12:00 PM</p>
-                    <a href="event-details.html?event=paper" class="read-more-button">Read More</a>
+        <div class="event-category-container">
+            <div class="event-category">Technical Events</div>
+            <div class="event-cards-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-1.jpg" alt="Paper Presentation">
+                    </div>
+                    <div class="event-content">
+                        <h3>Paper Presentation</h3>
+                        <p>Present your research or innovative ideas in electrical and electronics engineering.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 10:00 AM - 12:00 PM
+                            </div>
+                            <a href="event-details.html?event=paper" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="event-card">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Project Presentation</h3>
-                <p>Showcase your working project with real-world applications.</p>
-                <div class="event-overlay">
-                    <p>Timing: 01:00 PM - 03:00 PM</p>
-                    <a href="event-details.html?event=project" class="read-more-button">Read More</a>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-2.jpg" alt="Project Presentation">
+                    </div>
+                    <div class="event-content">
+                        <h3>Project Presentation</h3>
+                        <p>Showcase your working project with real-world applications.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 01:00 PM - 03:00 PM
+                            </div>
+                            <a href="event-details.html?event=project" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="event-card">
-                <i class="fas fa-bolt"></i>
-                <h3>CircuitXplorer</h3>
-                <p>A challenge involving circuit design, debugging, or simulation.</p>
-                <div class="event-overlay">
-                    <p>Timing: 03:30 PM - 05:30 PM</p>
-                    <a href="event-details.html?event=circuit" class="read-more-button">Read More</a>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-4.png" alt="CirQuiz">
+                    </div>
+                    <div class="event-content">
+                        <h3>CirQuiz</h3>
+                        <p>A challenge involving Quiz game.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 03:30 PM - 05:30 PM
+                            </div>
+                            <a href="event-details.html?event=circuit" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="event-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Ampere Arena</h3>
-                <p>Technical quiz or competition related to electrical concepts.</p>
-                <div class="event-overlay">
-                    <p>Timing: 11:00 AM - 12:30 PM</p>
-                    <a href="event-details.html?event=ampere" class="read-more-button">Read More</a>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-5.jpg" alt="Ampere Arena">
+                    </div>
+                    <div class="event-content">
+                        <h3>Ampere Arena</h3>
+                        <p>Technical fun games competition related to electrical concepts.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 11:00 AM - 12:30 PM
+                            </div>
+                            <a href="event-details.html?event=ampere" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="event-card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Tesla vs Edison</h3>
-                <p>A debate or quiz focusing on famous electrical pioneers and their contributions.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=tesla" class="read-more-button">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-category">
-            Non-Technical Events
-        </div>
-
-        <div class="event-cards">
-            <div class="event-card">
-                <i class="fas fa-utensils"></i>
-                <h3>Watt A Biryani</h3>
-                <p>A fun-filled food challenge, likely involving biryani.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=biryani" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-microphone"></i>
-                <h3>FluX Your Talent</h3>
-                <p>A platform to showcase talents like singing, dancing, or mimicry.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=talent" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-gamepad"></i>
-                <h3>Mini Mania</h3>
-                <p>A set of fun mini-games and exciting activities.</p>
-                <div class="event-overlay">
-                    <p>Timing: 04:00 PM - 06:00 PM</p>
-                    <a href="event-details.html?event=mini" class="read-more-button">Read More</a>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-3.jpg" alt="Tesla vs Edison">
+                    </div>
+                    <div class="event-content">
+                        <h3>Tesla vs Edison</h3>
+                        <p>A debate or quiz focusing on famous electrical pioneers and their contributions.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 02:00 PM - 04:00 PM
+                            </div>
+                            <a href="event-details.html?event=tesla" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <div class="event-category-container">
+            <div class="event-category">Non-Technical Events</div>
+            <div class="event-cards-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-1.jpg" alt="Watt A Biryani">
+                    </div>
+                    <div class="event-content">
+                        <h3>Watt A Biryani</h3>
+                        <p>A fun-filled food challenge, likely involving biryani.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 10:00 AM - 12:00 PM
+                            </div>
+                            <a href="event-details.html?event=biryani" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-9.png" alt="FluX Your Talent">
+                    </div>
+                    <div class="event-content">
+                        <h3>FluX Your Talent</h3>
+                        <p>A platform to showcase talents like singing, dancing, or mimicry.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 02:00 PM - 04:00 PM
+                            </div>
+                            <a href="event-details.html?event=talent" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-8.png" alt="Henna Artistry">
+                    </div>
+                    <div class="event-content">
+                        <h3>Henna Artistry</h3>
+                        <p>A set of fun mini-games and exciting activities.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 04:00 PM - 06:00 PM
+                            </div>
+                            <a href="event-details.html?event=mini" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Gallery Section - Matches About Crescent Theme -->
 <section id="gallery" class="crescent-gallery">
@@ -328,6 +378,7 @@
 
 
 <!-- About Crescent Section - Wider Design with New Image Effect -->
+
 <section id="about-crescent" class="about-crescent">
     <div class="container">
         <div class="section-header">
@@ -393,6 +444,7 @@
 </section>
 
 <!-- General Guidelines Section -->
+
 <section id="guidelines" class="guidelines">
     <div class="section-header">
         <h2>General Guidelines</h2>
@@ -480,17 +532,6 @@
     
 
 <!-- organizers -->
-<style>
-    .coordinator-avatar img {
-        width: 100px;  /* Adjust size as needed */
-        height: 100px; /* Ensure uniform shape */
-        border-radius: 50%; /* Makes it a circle */
-        object-fit: cover; /* Ensures image fills without distortion */
-        border: 2px solid #ddd; /* Optional: Adds a subtle border */
-        display: block;
-        margin: 0 auto;
-    }
-</style>
 
 <section class="organizers" id="organizers">
     <div class="section-header">
@@ -568,7 +609,7 @@
                 <img src="img/shoib.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
             </div>
             <h3>Shoaib A</h3>
-            <p>Sr.Designer</p>
+            <p>final year</p>
         </div>
 
         <div class="coordinator-card">
@@ -576,7 +617,7 @@
                 <img src="img/karthik.jpg" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
             </div>
             <h3>Karthik Hariharan V</h3>
-            <p>Jr.Designer</p>
+            <p>pre-final year</p>
         </div>
 
         <div class="coordinator-card">
@@ -584,7 +625,7 @@
                 <img src="img/afridy.jpg" alt="Treasurer" onerror="this.src='placeholder.jpg';">
             </div>
             <h3>Afridy R</h3>
-            <p>Jr.Designer</p>
+            <p>pre-final year</p>
         </div>
     </div>
     <div class="coordinator-category">
@@ -596,28 +637,12 @@
                 <img src="img/rahul.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
             </div>
             <h3>Rahul A</h3>
-            <p>Sr.Web designer</p>
+            <p>final year</p>
         </div>
 </section>
 
-<style>
-    .sponsors {
-        text-align: center;
-    }
 
-    .sponsor-cards {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .sponsor-logo img {
-        width: 150px; /* Set fixed width */
-        height: 150px; /* Set fixed height */
-        object-fit: contain; /* Ensures image fits without distortion */
-        display: block;
-    }
-</style>
+<!-- sponsors  -->
 
 <section class="sponsors" id="sponsors">
     <div class="section-header">
@@ -625,20 +650,21 @@
     </div>
 
     <div class="sponsor-cards">
-        <div class="sponsor-logo">
+        <!-- <div class="sponsor-logo">
             <img src="img/Poorvika-logo.webp" alt="Sponsor 1 Logo">
-        </div>
+        </div> -->
 
         <div class="sponsor-logo">
             <img src="img/Poorvika-logo.webp" alt="Sponsor 2 Logo">
         </div>
 
-        <div class="sponsor-logo">
+        <!-- <div class="sponsor-logo">
             <img src="img/Poorvika-logo.webp" alt="Sponsor 3 Logo">
         </div>
-    </div>
+    </div> -->
 </section>
 
+<!-- footer -->
 
     <footer>
         <div class="footer-content">
