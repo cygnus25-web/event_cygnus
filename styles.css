@@ -66,8 +66,9 @@ section {
     src: url('font/universidad-personal-use.bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
-.vintage-university-title {
+  }
+  
+  .vintage-university-title {
     font-family: 'Universidad', serif;
     color: #ffffff;
     font-weight: bold;
@@ -86,15 +87,16 @@ section {
       line-height: 1.3;
     }
   
-    .vintage-university-title .line-top {
+    .vintage-university-title .line-top,
+    .vintage-university-title .line-bottom {
       display: block;
     }
   
     .vintage-university-title .line-bottom {
-      display: block;
       margin-top: 5px;
     }
   }
+  
   
 
 
