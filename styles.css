@@ -551,16 +551,16 @@ body.menu-open {
     margin: 15px auto 0;
 }
 /* Increase size for small screens */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .hero-image {
-        max-width: 80%; /* Increase size */
+        max-width: 90%; /* Increase size slightly */
     }
 }
 
 /* Further increase for very small screens */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .hero-image {
-        max-width: 90%; /* Even larger for extra small screens */
+        max-width: 95%; /* Even larger for extra small screens */
     }
 }
 
