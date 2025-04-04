@@ -550,6 +550,19 @@ body.menu-open {
     background-color: #ffc107;
     margin: 15px auto 0;
 }
+/* Increase size for small screens */
+@media (max-width: 600px) {
+    .hero-image {
+        max-width: 80%; /* Increase size */
+    }
+}
+
+/* Further increase for very small screens */
+@media (max-width: 400px) {
+    .hero-image {
+        max-width: 90%; /* Even larger for extra small screens */
+    }
+}
 
 /* Wider Design with Original Colors - About CYGNUS Section */
 
