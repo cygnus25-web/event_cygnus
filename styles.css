@@ -1,611 +1,1652 @@
-<!DOCTYPE html>
-<html lang="en">
+/* Base and Reset Styles - keeping original with slight modifications */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <!-- Additional meta tags for iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CYGNUS'25 - Electrifying Experience</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+body {
+    background-color: #3c2a1e;
+    color: #f5f5dc;
+    line-height: 1.6;
+}
 
-<body>
-    <div class="video-background">
-        <video autoplay muted loop id="backgroundVideo">
-            <source src="img/BG.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay"></div>
-    </div>
-
-    <header id="main-header">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-bolt logo-icon"></i>
-                CYGNUS'25
-            </a>
-            
-            <div class="hamburger" id="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about-crescent">About Crescent</a></li>
-                <li><a href="#about-event">About Event</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#guidelines">Guidelines</a></li>
-                <li><a href="#organizers">Organizers</a></li>
-                <li><a href="#sponsors">Sponsors</a></li>
-                <li class="register-link"><a href="#registration">Register</a></li>
-            </ul>
-            
-            <div class="nav-ornament ornament-left"></div>
-            <div class="nav-ornament ornament-right"></div>
-        </div>
-    </header>
-    <br> <br>
-    
-    <section class="hero" id="hero">
-        <img src="img/eee.png" alt="CYGNUS'25 Logo" class="hero-image"> <br> <br>
-        <h5 style="color: rgb(223, 154, 94); font-size: 18px; -webkit-text-stroke: 2px;">PROUDLY PRESENTS</h5> <br>
-        <h5 style="color: rgb(224, 235, 6); font-size: 30px; text-shadow: 2px 2px 4px #ffffffdf;"><b>A NATIONAL LEVEL SYMPOSIUM</b></h5> <br>
-        <img src="img/cygnus1.png" alt="CYGNUS'25 Logo" class="hero-image"><br>
-
-
-<!-- countdown code -->
-<div class="countdown-container">
-    <div class="corner top-left"></div>
-    <div class="corner top-right"></div>
-    <div class="corner bottom-left"></div>
-    <div class="corner bottom-right"></div>
-    
-    <h7>Hurry! Registration Closing Soon! ⏳</h7>
-    
-    <div class="countdown-header" id="event-name-display"></div>
-    
-    <div class="countdown">
-        <div class="countdown-item">
-            <div class="countdown-value">
-                <div class="flip-card">
-                    <div class="flip-panel" id="days">00</div>
-                </div>
-            </div>
-            <div class="countdown-label">Days</div>
-        </div>
-        
-        <div class="countdown-item">
-            <div class="countdown-value">
-                <div class="flip-card">
-                    <div class="flip-panel" id="hours">00</div>
-                </div>
-            </div>
-            <div class="countdown-label">Hours</div>
-        </div>
-        
-        <div class="countdown-item">
-            <div class="countdown-value">
-                <div class="flip-card">
-                    <div class="flip-panel" id="minutes">00</div>
-                </div>
-            </div>
-            <div class="countdown-label">Minutes</div>
-        </div>
-        
-        <div class="countdown-item">
-            <div class="countdown-value">
-                <div class="flip-card">
-                    <div class="flip-panel" id="seconds">00</div>
-                </div>
-            </div>
-            <div class="countdown-label">Seconds</div>
-        </div>
-    </div>
-    
-    <div class="footer">
-        April 21, 2025 • Convention Centre • 9:30 AM
-    </div>
-</div>
-<br>
- 
- <!-- registration button -->
-
-        <div class="button-container">
-            <a href="#registration" class="register-btn">Register Now</a>
-        </div>
-    </section>
-    
-<!-- About Event Section -->
-<section id="about-event" class="about-event">
-    <div class="container">
-        <div class="section-header">
-            <h2>About CYGNUS'25</h2>
-        </div>
-        <div class="event-details">
-            <div class="event-info">
-                <img src="img/cygnus’25.png" alt="CYGNUS Event" class="event-image">
-                <p style="font-family: 'Georgia', serif; text-align: justify;">CYGNUS is a National level Symposium that is conducted every year by the Department of Electrical and Electronics Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 8 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electrical and Electronics Engineering.</p>
-            </div>
-            <div class="event-stats">
-                <div class="stat-card">
-                    <i class="fas fa-users"></i>
-                    <h3>500+</h3>
-                    <p>Participants Expected</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>1 Day</h3>
-                    <p>National level Symposium</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>8</h3>
-                    <p>Total Events</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <section class="events" id="events">
-        <div class="section-header">
-            <h2>Events</h2>
-        </div>
-
-        <div class="event-category">
-            Technical Events
-        </div>
-
-        <div class="event-cards">
-            <div class="event-card">
-                <i class="fas fa-file-alt"></i>
-                <h3>Paper Presentation</h3>
-                <p>Present your research or innovative ideas in electrical and electronics engineering.</p>
-                <div class="event-overlay">
-                    <p>Timing: 10:00 AM - 12:00 PM</p>
-                    <a href="event-details.html?event=paper" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Project Presentation</h3>
-                <p>Showcase your working project with real-world applications.</p>
-                <div class="event-overlay">
-                    <p>Timing: 01:00 PM - 03:00 PM</p>
-                    <a href="event-details.html?event=project" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-bolt"></i>
-                <h3>CircuitXplorer</h3>
-                <p>A challenge involving circuit design, debugging, or simulation.</p>
-                <div class="event-overlay">
-                    <p>Timing: 03:30 PM - 05:30 PM</p>
-                    <a href="event-details.html?event=circuit" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-bolt"></i>
-                <h3>Ampere Arena</h3>
-                <p>Technical quiz or competition related to electrical concepts.</p>
-                <div class="event-overlay">
-                    <p>Timing: 11:00 AM - 12:30 PM</p>
-                    <a href="event-details.html?event=ampere" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Tesla vs Edison</h3>
-                <p>A debate or quiz focusing on famous electrical pioneers and their contributions.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=tesla" class="read-more-button">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-category">
-            Non-Technical Events
-        </div>
-
-        <div class="event-cards">
-            <div class="event-card">
-                <i class="fas fa-utensils"></i>
-                <h3>Watt A Biryani</h3>
-                <p>A fun-filled food challenge, likely involving biryani.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=biryani" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-microphone"></i>
-                <h3>FluX Your Talent</h3>
-                <p>A platform to showcase talents like singing, dancing, or mimicry.</p>
-                <div class="event-overlay">
-                    <p>Timing: 02:00 PM - 04:00 PM</p>
-                    <a href="event-details.html?event=talent" class="read-more-button">Read More</a>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <i class="fas fa-gamepad"></i>
-                <h3>Mini Mania</h3>
-                <p>A set of fun mini-games and exciting activities.</p>
-                <div class="event-overlay">
-                    <p>Timing: 04:00 PM - 06:00 PM</p>
-                    <a href="event-details.html?event=mini" class="read-more-button">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- About Crescent Section -->
-
-       <section id="about-crescent" class="about-crescent">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Crescent</h2>
-            </div>
-            <div class="crescent-details">
-                <div class="crescent-info">
-                    <div class="carousel-container">
-                        <div class="carousel">
-                            <img src="img/cres1.jpeg" alt="Image 1">
-                            <img src="img/cres2.jpeg" alt="Image 2">
-                            <img src="img/cres3.jpeg" alt="Image 3">
-                        </div>
-                    </div> <br>
-                    
-                    <p style="font-family: 'Georgia', serif; text-align: justify;">
-                        Established in 1984, B.S. Abdur Rahman Crescent Institute of Science and Technology, situated in Chennai near Tambaram, is a distinguished institution with a 38-year legacy of academic excellence. Our intellectual hub challenges conventional thinking, fostering a passion for redefining learning. With top- notch education, a green campus, and vibrant student life, we provide a conducive environment for holistic development.
-                        Our diverse educational programs and student development clubs create a community that nurtures personal and professional growth, making our institution a lifelong home.
-                                      </p>         <br>
-                
-                <div class="crescent-stats">
-                    <div class="stat-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>40+</h3>
-                        <p>Years of Academic Excellence</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-building"></i>
-                        <h3>15+</h3>
-                        <p>Departments</p>
-                    </div>
-                    <div class="stat-card">
-                        <i class="fas fa-users"></i>
-                        <h3>5000+</h3>
-                        <p>Students</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- General Guidelines Section -->
-<section id="guidelines" class="guidelines">
-    <div class="section-header">
-        <h2>General Guidelines</h2>
-    </div>
-    
-    <div class="guidelines-container">
-        <div class="guidelines-content">
-            <h3>Event Participation Rules</h3>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-user-edit"></i></div>
-                <div class="guideline-text">
-                    <h4>Registration Requirements</h4>
-                    <p>All participants must register beforehand through the online registration portal. On-spot registrations will be subject to availability and additional fees.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-users"></i></div>
-                <div class="guideline-text">
-                    <h4>Team Formation</h4>
-                    <p>Teams should consist of 2-4 members for group events. Individual participants are welcome for solo events.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-tshirt"></i></div>
-                <div class="guideline-text">
-                    <h4>Dress Code</h4>
-                    <p>Participants are expected to dress in smart casuals. College ID cards are mandatory for all participants.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-balance-scale"></i></div>
-                <div class="guideline-text">
-                    <h4>Judging Criteria</h4>
-                    <p>All events will be judged based on innovation, technical accuracy, presentation skills, and practical implementation. The decision of judges will be final.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-exclamation-triangle"></i></div>
-                <div class="guideline-text">
-                    <h4>Code of Conduct</h4>
-                    <p>Participants are expected to maintain the decorum of the institution. Any misconduct will lead to immediate disqualification.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-certificate"></i></div>
-                <div class="guideline-text">
-                    <h4>Certificates</h4>
-                    <p>Participation certificates will be provided to all registered participants. Winners will receive additional merit certificates and prizes.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-clock"></i></div>
-                <div class="guideline-text">
-                    <h4>Punctuality</h4>
-                    <p>Participants must report 30 minutes before their event.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-mobile-alt"></i></div>
-                <div class="guideline-text">
-                    <h4>Electronics</h4>
-                    <p>Mobile phones must be silenced during all events.</p>
-                </div>
-            </div>
-
-            <div class="guideline-item">
-                <div class="guideline-icon"><i class="fas fa-laptop"></i></div>
-                <div class="guideline-text">
-                    <h4>Equipment</h4>
-                    <p>Bring your own laptops for coding and design events.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-    
-
-<!-- organizers -->
-<style>
-    .coordinator-avatar img {
-        width: 100px;  /* Adjust size as needed */
-        height: 100px; /* Ensure uniform shape */
-        border-radius: 50%; /* Makes it a circle */
-        object-fit: cover; /* Ensures image fills without distortion */
-        border: 2px solid #ddd; /* Optional: Adds a subtle border */
-        display: block;
-        margin: 0 auto;
+/* Consistent Section Styling */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
     }
-</style>
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+        
+section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-<section class="organizers" id="organizers">
-    <div class="section-header">
-        <h2>Organizers</h2>
-    </div>
+/* Header & Navigation - improved alignment */
+/* Vintage Navigation Styles */
+header {
+    background-color: rgba(60, 42, 30, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #e3b23c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    padding: 15px 40px;
+}
 
-    <div class="coordinator-category">
-        Faculty Coordinators
-    </div>
+/* Scrolled header style */
+header.scrolled {
+    padding: 10px 40px;
+    background-color: rgba(43, 30, 21, 0.98);
+}
 
-    <div class="coordinator-cards">
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/dean.jpeg" alt="Dean SECS" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Dr. C. Tharini</h3>
-            <p>DEAN-SECS</p>
-            <p>CONVENOR</p>
-        </div>
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/hod.png" alt="HOD EEE" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Dr. S.Jennathu Beevi</h3>
-            <p>HOD-EEE </p>
-            <p>CONVENOR</p>
-        </div>
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f5f5dc;
+    text-decoration: none;
+    position: relative;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    z-index: 1001;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/clss_adviser1.png" alt="Assistant Professor" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Dr. K.R. Shanmuga Vadivu</h3>
-            <p>Assistant Professor</p>
-            <p>FACULTY COORDINATOR</p>
-        </div>
-    </div>
+.logo-icon {
+    color: #e3b23c;
+    margin-right: 10px;
+    text-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
+    animation: glowEffect 3s infinite alternate;
+}
 
-    <div class="coordinator-category">
-        Student Coordinators
-    </div>
+@keyframes glowEffect {
+    0% { text-shadow: 0 0 5px rgba(227, 178, 60, 0.5); }
+    100% { text-shadow: 0 0 15px rgba(227, 178, 60, 0.8), 0 0 20px rgba(227, 178, 60, 0.5); }
+}
 
-    <div class="coordinator-cards">
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/shams.jpg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Shams Tabrez Hussain A</h3>
-            <p>GENERAL SECRETARY</p>
-        </div>
+/* Navigation menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/jahanger.png" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Jahanger J</h3>
-            <p>JOINT SECRETARY</p>
-        </div>
+.nav-menu li {
+    margin-left: 25px;
+    position: relative;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/sumaiya.PNG" alt="Treasurer" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Sumayathul Haire S</h3>
-            <p>TREASURER</p>
-        </div>
-    </div>
-    <div class="coordinator-category">
-        Designers
-    </div>
-    <div class="coordinator-cards">
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/shoib.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Shoaib A</h3>
-            <p>Sr.Designer</p>
-        </div>
+.nav-menu li a {
+    color: #f5f5dc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    position: relative;
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.5px;
+    padding: 8px 5px;
+    display: block;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/karthik.jpg" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Karthik</h3>
-            <p>Jr.Designer</p>
-        </div>
+/* Vintage underline effect */
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #e3b23c, transparent);
+    transition: width 0.3s;
+}
 
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/afridy.jpg" alt="Treasurer" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Afridy</h3>
-            <p>Jr.Designer</p>
-        </div>
-    </div>
-    <div class="coordinator-category">
-        Website Developer
-    </div>
-    <div class="coordinator-cards">
-        <div class="coordinator-card">
-            <div class="coordinator-avatar">
-                <img src="img/rahul.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
-            </div>
-            <h3>Rahul A</h3>
-            <p>Sr.Web designer</p>
-        </div>
-</section>
+.nav-menu li a:hover {
+    color: #e3b23c;
+}
 
-<style>
-    .sponsors {
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Active link style */
+.nav-menu li a.active {
+    color: #e3b23c;
+    font-weight: bold;
+}
+
+.nav-menu li a.active::after {
+    width: 100%;
+    background: #e3b23c;
+}
+
+/* Special register button */
+.nav-menu li.register-link a {
+    background-color: rgba(227, 178, 60, 0.2);
+    padding: 8px 20px;
+    border-radius: 3px;
+    border: 1px solid #e3b23c;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.nav-menu li.register-link a:hover {
+    background-color: rgba(227, 178, 60, 0.4);
+    box-shadow: 0 0 10px rgba(227, 178, 60, 0.5);
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #f5f5dc;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Vintage decorative elements */
+.nav-ornament {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 5c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zm0 19c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1zM5 15c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zm19 0c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zM7.8 7.8c.4-.4 1-.4 1.4 0s.4 1 0 1.4-1 .4-1.4 0-.4-1 0-1.4zm13 13c.4-.4 1-.4 1.4 0s.4 1 0 1.4-1 .4-1.4 0-.4-1 0-1.4zM7.8 22.2c.4.4.4 1 0 1.4s-1 .4-1.4 0-.4-1 0-1.4 1-.4 1.4 0zm13-13c.4.4.4 1 0 1.4s-1 .4-1.4 0-.4-1 0-1.4 1-.4 1.4 0z' fill='%23e3b23c' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.ornament-left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ornament-right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Prevent body scroll when menu is open on mobile */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Media Queries for Responsive Design */
+/* Large Desktop */
+@media (min-width: 1441px) {
+    .nav-container {
+        max-width: 1600px;
+    }
+    
+    .nav-menu li {
+        margin-left: 35px;
+    }
+    
+    .nav-menu li a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .nav-menu li {
+        margin-left: 20px;
+    }
+}
+
+/* Small Desktop/Large Tablet */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 30px;
+    }
+    
+    header.scrolled {
+        padding: 10px 30px;
+    }
+    
+    .nav-menu li {
+        margin-left: 15px;
+    }
+    
+    .nav-menu li a {
+        font-size: 0.95rem;
+    }
+    
+    .logo {
+        font-size: 1.6rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 820px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Navigation menu for mobile */
+    .nav-menu {
+        position: fixed;
+        background-color: rgba(43, 30, 21, 0.98);
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        padding: 80px 0 30px;
+        overflow-y: auto;
+        border-left: 2px solid #e3b23c;
+    }
+    
+    /* Menu open state */
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu li a {
+        padding: 12px 20px;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+    
+    .nav-menu li.register-link {
+        margin-top: 20px;
+        width: 80%;
+    }
+    
+    .nav-menu li.register-link a {
+        width: 100%;
+        padding: 12px;
+    }
+    
+    /* Transform hamburger to X */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background-color: #e3b23c;
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: #e3b23c;
+    }
+    
+    /* Vintage separator between menu items */
+    .nav-menu li::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(227, 178, 60, 0.3), transparent);
+        margin: 5px auto 0;
+    }
+    
+    .nav-menu li:last-child::after {
+        display: none;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+    .nav-menu {
+        padding: 60px 0 20px;
+    }
+    
+    .nav-menu li {
+        margin: 10px 0;
+    }
+    
+    .nav-menu li a {
+        padding: 8px 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 576px) {
+    header {
+        padding: 12px 20px;
+    }
+    
+    header.scrolled {
+        padding: 8px 20px;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 375px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    header.scrolled {
+        padding: 7px 15px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .hamburger {
+        width: 25px;
+        height: 18px;
+    }
+    
+    .nav-menu li a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 320px) {
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .logo-icon {
+        margin-right: 5px;
+    }
+    
+    .nav-menu li.register-link {
+        width: 85%;
+    }
+}
+
+/* For devices with high pixel ratio (Retina displays) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .nav-menu li a {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Add iPhone/iOS specific adjustments */
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */
+    .nav-menu {
+        /* Fix for iOS momentum scrolling */
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent notch interference on iPhones */
+    header {
+        padding-top: env(safe-area-inset-top);
+        padding-right: env(safe-area-inset-right);
+        padding-left: env(safe-area-inset-left);
+    }
+}
+
+/* Hero Section - improved alignment and spacing */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background-color: #3c2a1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid #ffc107;
+    border-radius: 25px;
+    color: #ffc107;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 6rem;
+    margin-bottom: 20px;
+    color: #f5f5dc;
+    animation: slideInDown 1s ease-out;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #ffc107;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: #ffc107;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.event-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    color: #f5f5dc;
+}
+
+.detail-item i {
+    color: #ffc107;
+    margin-right: 10px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #3c2a1e;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #ffca28;
+}
+
+/* Section Headers - consistent styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    color: #f5f5dc;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ffc107;
+    margin: 15px auto 0;
+}
+
+/* About Section - improved grid layout */
+#about-event .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#about-event .event-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+#about-event .event-info {
+    flex: 2;
+    padding-right: 40px;
+    text-align: justify;
+}
+
+#about-event .event-info .event-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#about-event .event-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+#about-event .stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#about-event .stat-card:hover {
+    transform: translateY(-5px);
+}
+
+#about-event .stat-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 10px;
+}
+
+#about-event .stat-card h3 {
+    color: #f5f5dc;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    #about-event .event-details {
+        flex-direction: column;
+        padding: 25px;
+    }
+    
+    #about-event .event-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Events Section - improved card grid */
+.events {
+    padding: 80px 40px;
+}
+
+.event-category {
+    color: #ffc107;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.event-category::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #ffc107;
+    margin: 10px auto 0;
+}
+
+.event-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.event-card {
+    background-color: rgba(60, 45, 30, 0.7);
+    border-radius: 8px;
+    padding: 30px;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card i {
+    font-size: 2.2rem;
+    color: #ffc107;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.event-card h3 {
+    color: #ffc107;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.event-card p {
+    color: #d4c9bc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Event Card Overlay */
+.event-card .event-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+}
+
+.event-card:hover .event-overlay {
+    opacity: 1;
+}
+
+.event-overlay p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #f5f5dc;
+}
+
+.read-more-button {
+    background-color: #ffc107;
+    color: #3c2a1e;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.read-more-button:hover {
+    background-color: #ffca28;
+    transform: scale(1.05);
+}
+
+/* Organizers Section - improved card alignment */
+.organizers {
+    padding: 80px 40px;
+}
+
+.coordinator-category {
+    color: #ffc107;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.coordinator-category::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #ffc107;
+    margin: 10px auto 0;
+}
+
+.coordinator-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.coordinator-card {
+    background-color: rgba(60, 45, 30, 0.7);
+    border-radius: 8px;
+    padding: 35px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.coordinator-card:hover {
+    transform: translateY(-5px);
+}
+
+.coordinator-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #663a18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
+    border: 2px solid #ffc107;
+}
+
+.coordinator-avatar i {
+    font-size: 2.2rem;
+    color: #ffc107;
+}
+
+.coordinator-card h3 {
+    color: #ffc107;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.coordinator-card p {
+    color: #d4c9bc;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sponsors Section - improved card alignment */
+.sponsors {
+    padding: 80px 40px;
+}
+
+.sponsor-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.sponsor-card {
+    background-color: rgba(60, 45, 30, 0.7);
+    border-radius: 8px;
+    padding: 35px;
+    text-align: center;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+}
+
+.sponsor-logo {
+    margin-bottom: 20px;
+    color: #ffc107;
+    font-size: 3rem;
+}
+
+.sponsor-card h3 {
+    color: #ffc107;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+/* Footer - improved alignment */
+footer {
+    background-color: #2d1f15;
+    padding: 70px 40px 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-brand h2 {
+    font-size: 2rem;
+    color: #f5f5dc;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-brand h2 i {
+    color: #ffc107;
+    margin-right: 12px;
+}
+
+.footer-brand p {
+    color: #d4c9bc;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #f5f5dc;
+    font-size: 1.4rem;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    color: #ffc107;
+    transform: translateY(-3px);
+}
+
+.footer-contact h3,
+.footer-links h3 {
+    color: #ffc107;
+    margin-bottom: 25px;
+    font-size: 1.4rem;
+}
+
+.contact-info {
+    list-style: none;
+}
+
+.contact-info li {
+    display: flex;
+    margin-bottom: 18px;
+    color: #d4c9bc;
+}
+
+.contact-info li i {
+    color: #ffc107;
+    margin-right: 15px;
+    min-width: 20px;
+}
+
+.quick-links {
+    list-style: none;
+}
+
+.quick-links li {
+    margin-bottom: 12px;
+}
+
+.quick-links a {
+    color: #d4c9bc;
+    text-decoration: none;
+    transition: color 0.3s;
+    position: relative;
+    padding-left: 15px;
+}
+
+.quick-links a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #ffc107;
+}
+
+.quick-links a:hover {
+    color: #ffc107;
+}
+
+.copyright {
+    text-align: center;
+    color: #a59688;
+    padding-top: 30px;
+    border-top: 1px solid #483629;
+    font-size: 0.9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Countdown Timer Styles */
+.countdown {
+    font-size: 1.4rem;
+    color: #ffc107;
+    margin-top: 30px;
+    animation: pulse 1.5s infinite alternate;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px 30px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive Styles - improved for better alignment on mobile */
+@media (max-width: 992px) {
+    section {
+        padding: 60px 30px;
+    }
+    
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    
+    .event-cards, 
+    .coordinator-cards, 
+    .sponsor-cards {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 50px 25px;
+    }
+    
+    .hero {
+        padding: 80px 20px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .event-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    #about-event .event-details {
+        flex-direction: column;
+        padding: 25px;
+    }
+    
+    #about-event .event-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .registration-form {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .event-cards, 
+    .coordinator-cards, 
+    .sponsor-cards {
+        gap: 20px;
+    }
+    
+    .countdown {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+}
+
+/* Button Container for better alignment */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.register-btn {
+    font-size: 22px;
+    font-weight: bold;
+    color: #f4e1c6;
+    padding: 15px 35px;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: rgba(45, 31, 21, 0.449);
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 18px;
+    border: 3px solid #e3b23c;
+    box-shadow: 0 0 10px #e3b23c;
+    animation: ledBlink 1s infinite alternate;
+}
+
+@keyframes ledBlink {
+    0% { border-color: #e3b23c; box-shadow: 0 0 10px #e3b23c; }
+    50% { border-color: #d38d5f; box-shadow: 0 0 20px #d38d5f; }
+    100% { border-color: #e3b23c; box-shadow: 0 0 10px #e3b23c; }
+}
+
+/* About Crescent Section Styles */
+.about-crescent {
+    padding: 80px 40px;
+}
+
+.about-crescent .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-crescent .crescent-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.about-crescent .crescent-info {
+    flex: 2;
+    padding-right: 40px;
+}
+
+.about-crescent .crescent-info h3 {
+    color: #ffc107;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.about-crescent .crescent-info h4 {
+    color: #ffc107;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.about-crescent .crescent-info ul {
+    list-style-type: disc;
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
+.about-crescent .crescent-info ul li {
+    margin-bottom: 8px;
+}
+
+.about-crescent .crescent-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.about-crescent .stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-crescent .stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.about-crescent .stat-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.about-crescent .stat-card h3 {
+    color: #f5f5dc;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+/* Guidelines Section Styles */
+.guidelines {
+    padding: 80px 40px;
+}
+
+.guidelines-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.guidelines-content {
+    flex: 2;
+}
+
+.guidelines-content h3 {
+    color: #ffc107;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.guideline-item {
+    display: flex;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.guideline-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.guideline-item i {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.guideline-text h4 {
+    color: #ffc107;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.guideline-text p {
+    color: #d4c9bc;
+}
+
+.guidelines-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.guideline-stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.guideline-stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.guideline-stat-card i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.guideline-stat-card h3 {
+    color: #ffc107;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .guidelines-container {
+        flex-direction: column;
+    }
+    
+    .guidelines-image {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .guideline-stat-card {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-crescent .crescent-details {
+        flex-direction: column;
+    }
+    
+    .about-crescent .crescent-info {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .guideline-stat-card {
+        min-width: 100%;
+    }
+    
+    .guidelines-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .guidelines-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .guideline-stat-card {
+        width: 100%;
         text-align: center;
     }
 
-    .sponsor-cards {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+    .about-crescent .crescent-details {
+        padding: 10px;
+    }
+    
+    .about-crescent .crescent-info {
+        text-align: center;
+    }
+}
+
+/* Video Background Styles */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 42, 30, 0.8); /* Adjusted to match your site's color scheme */
+    z-index: 1;
+}
+
+/* Modify existing body style to accommodate the video background */
+body {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure all sections have proper transparency */
+section, 
+header, 
+footer {
+    background-color: rgba(60, 42, 30, 0.5); /* Semi-transparent to show video */
+    backdrop-filter: blur(3px); /* Slight blur effect for better text readability */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+header {
+    background-color: rgba(126, 63, 0, 0.9); /* Keeping header more opaque for navigation */
+}
+
+/* Adjust specific sections to have different opacities if needed */
+.hero {
+    background-color: rgba(60, 42, 30, 0.2); /* More transparent hero section */
+}
+
+footer {
+    background-color: rgba(45, 31, 21, 0.9); /* More opaque footer */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #backgroundVideo {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.full-image {
+    width: 100%;  /* Makes the image responsive */
+    max-width: 1250px;  /* Ensures it doesn’t stretch beyond its actual size */
+    height: auto;  /* Maintains aspect ratio */
+    display: block;  /* Removes extra spacing */
+    margin: 0 auto;  /* Centers the image */
+}
+
+/* countdown style */
+
+.countdown-container {
+    text-align: center;
+    max-width: 90%;
+    width: 100%;
+    background-color: #eed7aab0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 8px solid #8b7356;
+    margin: auto;
+}
+
+h7 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: #5a4b3a;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif;
+}
+
+.countdown-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5a4b3a;
+}
+
+.countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 100px;
+    min-width: 70px;
+    max-width: 140px;
+}
+
+.countdown-value {
+    position: relative;
+    width: 100%;
+    padding-top: 120%; /* Aspect ratio hack */
+    perspective: 500px;
+    margin-bottom: 10px;
+}
+
+.flip-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.flip-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #33281f;
+    color: #f7ebd5;
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: bold;
+    font-family: 'Orbitron', 'Courier New', monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.flip-panel:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.countdown-label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #5a4b3a;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: #453520;
+}
+
+/* Vintage decoration */
+.corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #8b7356;
+}
+
+.top-left {
+    top: -8px;
+    left: -8px;
+    border-radius: 0 0 30px 0;
+}
+
+.top-right {
+    top: -8px;
+    right: -8px;
+    border-radius: 0 0 0 30px;
+}
+
+.bottom-left {
+    bottom: -8px;
+    left: -8px;
+    border-radius: 0 30px 0 0;
+}
+
+.bottom-right {
+    bottom: -8px;
+    right: -8px;
+    border-radius: 30px 0 0 0;
+}
+
+@media (max-width: 600px) {
+    .countdown-label {
+        font-size: 0.8rem;
     }
 
-    .sponsor-logo img {
-        width: 150px; /* Set fixed width */
-        height: 150px; /* Set fixed height */
-        object-fit: contain; /* Ensures image fits without distortion */
-        display: block;
+    h7 {
+        font-size: 1.8rem;
     }
-</style>
-
-<section class="sponsors" id="sponsors">
-    <div class="section-header">
-        <h2>Sponsors</h2>
-    </div>
-
-    <div class="sponsor-cards">
-        <div class="sponsor-logo">
-            <img src="img/Poorvika-logo.webp" alt="Sponsor 1 Logo">
-        </div>
-
-        <div class="sponsor-logo">
-            <img src="img/Poorvika-logo.webp" alt="Sponsor 2 Logo">
-        </div>
-
-        <div class="sponsor-logo">
-            <img src="img/Poorvika-logo.webp" alt="Sponsor 3 Logo">
-        </div>
-    </div>
-</section>
+}
 
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h2>
-                    <i class="fas fa-bolt"></i>
-                    CYGNUS'25
-                </h2>
-                <p>
-                    Join us for an electrifying technical fest experience! Participate in various events,
-                    showcase your skills, and connect with industry experts.
-                </p>
+/* animation effect for about crescent */
+.carousel-container {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #f0bb3ee3;
+    border-radius: 10px;
+    margin: 0 auto; /* Center align the carousel */
+}
 
-                <style>
-                    .social-links {
-                        display: flex;
-                        justify-content: center; /* Centers horizontally */
-                        align-items: center; /* Centers vertically if needed */
-                        gap: 15px; /* Adds space between icons */
-                    }
-                
-                    .social-links a {
-                        font-size: 24px; /* Adjust icon size */
-                        text-decoration: none;
-                        color: rgb(255, 255, 255); /* Change color if needed */
-                    }
-                </style>
-                
-                <div class="social-links">
-                    <a href="https://maps.app.goo.gl/VRDzn1TJ4gpBWVCD7"><i class="fas fa-map-marker-alt"></i></a>
-                    <a href="https://www.instagram.com/cygnus_2025?igsh=YWtzMzI1aTI3azI3"><i class="fab fa-instagram"></i></a>
-                </div>
-                
-            </div>
+.carousel {
+    display: flex;
+    width: 300%;
+    animation: moveImages 10s linear infinite;
+}
 
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <ul class="contact-info">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        
-GST Road, Vandalur, Chennai 600 048. Tamilnadu. INDIA 
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        +91 8903989413 <br>
-                        +91 8925291464 
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        cygnus25.eee@gmail.com
-                    </li>
-                </ul>
-            </div>
+.carousel img {
+    width: 33.33%;
+    object-fit: cover;
+}
 
-        </div>
+@keyframes moveImages {
+    0% { transform: translateX(0%); }
+    33% { transform: translateX(-33.33%); }
+    66% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0%); }
+}
 
-        <div class="copyright">
-            &copy; 2025 CYGNUS'25. All rights reserved.
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
+  
