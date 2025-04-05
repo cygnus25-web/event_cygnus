@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Show loading animation
+    const loadingElement = document.createElement('div');
+    loadingElement.className = 'loading';
+    loadingElement.innerHTML = '<div class="loading-spinner"></div>';
+    document.body.appendChild(loadingElement);
+    
+    // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const event = urlParams.get('event');
     let eventTitle = '';
@@ -35,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
+    // Function to smooth scroll to an element
+    function smoothScrollTo(element) {
+        const yOffset = -80; // header height + some padding
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+
+    // Define event data
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
@@ -222,126 +237,121 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update page title
     document.getElementById('event-title').innerText = eventTitle;
+    document.title = eventTitle + " - CYGNUS'25";
     
-    // Set poster image with fallback mechanism
+    // Set poster image with enhanced fallback mechanism
     const posterImg = document.getElementById('event-poster-img');
     const posterContainer = document.getElementById('event-poster-container');
     
-    // Try to set the image source
-    posterImg.src = posterPath;
-    posterImg.alt = eventTitle + " Poster";
+    // Preload image to check if it exists
+    const imagePreloader = new Image();
+    imagePreloader.src = posterPath;
     
-    // Handle image loading error
-    posterImg.onerror = function() {
+    imagePreloader.onload = function() {
+        // Image exists, set it
+        posterImg.src = posterPath;
+        posterImg.alt = eventTitle + " Poster";
+        
+        // Add lazy loading for better performance
+        posterImg.setAttribute('loading', 'lazy');
+    };
+    
+   imagePreloader.onerror = function() {
         console.log("Image failed to load: " + posterPath);
         
-        // Try with jahanger.png if that was not the initial path
-        if (posterPath !== "img/jahanger.png") {
-            console.log("Trying with jahanger.png instead");
-            this.src = "img/jahanger.png";
-            
-            // Add second error handler for the fallback image
-            this.onerror = function() {
-                console.log("Fallback image also failed to load");
-                
-                // Use SVG placeholder as final fallback
-                this.src = createPlaceholderSVG(eventTitle);
-                
-                // If SVG also fails, use HTML placeholder
-                this.onerror = function() {
-                    console.log("SVG placeholder failed, using HTML fallback");
-                    this.style.display = 'none';
-                    posterContainer.innerHTML = createPlaceholderHTML(eventTitle);
-                };
-            };
+        // Try with default image if that was not the initial path
+        if (posterPath !== "img/default_event.png") {
+            posterPath = "img/default_event.png";
+            posterImg.src = posterPath;
+            posterImg.alt = eventTitle + " Poster";
         } else {
-            // If jahanger.png was already the path that failed, go straight to SVG
-            console.log("Using SVG placeholder");
-            this.src = createPlaceholderSVG(eventTitle);
+            // Both paths failed, use SVG placeholder
+            posterImg.style.display = "none";
             
-            // If SVG also fails, use HTML placeholder
-            this.onerror = function() {
-                console.log("SVG placeholder failed, using HTML fallback");
-                this.style.display = 'none';
-                posterContainer.innerHTML = createPlaceholderHTML(eventTitle);
-            };
+            // Create a placeholder div with styling
+            const placeholderDiv = document.createElement('div');
+            placeholderDiv.className = 'poster-placeholder';
+            placeholderDiv.innerHTML = `
+                <i class="fas fa-image"></i>
+                <h3>${eventTitle}</h3>
+                <p>CYGNUS'25</p>
+                <p>Poster image not available</p>
+            `;
+            
+            posterContainer.appendChild(placeholderDiv);
         }
     };
     
-    // Populate rules
-    const rulesList = document.getElementById('event-rules-list');
-    rulesList.innerHTML = ''; // Clear existing list
+    // Populate rules list
+    const rulesList = document.getElementById('rules-list');
     eventRules.forEach(rule => {
         const li = document.createElement('li');
         li.innerText = rule;
         rulesList.appendChild(li);
     });
-
-    // Populate coordinators
-    const coordinatorCards = document.querySelector('.coordinator-cards');
-    coordinatorCards.innerHTML = ''; // Clear existing cards
     
+    // Populate coordinators
+    const coordinatorCards = document.getElementById('coordinator-cards');
     coordinators.forEach((coordinator, index) => {
         const card = document.createElement('div');
         card.className = 'coordinator-card';
+        card.style.animationDelay = `${index * 0.1}s`;
         
         let html = `<h4>${coordinator.name}</h4>`;
+        
         if (coordinator.designation) {
             html += `<p><i class="fas fa-user-tie"></i> ${coordinator.designation}</p>`;
         }
+        
         if (coordinator.contact) {
-            html += `<p><i class="fas fa-phone"></i> Contact: ${coordinator.contact}</p>`;
+            html += `<p><i class="fas fa-phone"></i> ${coordinator.contact}</p>`;
         }
+        
         if (coordinator.email) {
-            html += `<p><i class="fas fa-envelope"></i> Email: ${coordinator.email}</p>`;
+            html += `<p><i class="fas fa-envelope"></i> ${coordinator.email}</p>`;
         }
         
         card.innerHTML = html;
         coordinatorCards.appendChild(card);
-        
-        // Add animation delay for staggered entry
-        setTimeout(() => {
-            card.style.animation = 'popIn 0.5s ease-in-out forwards';
-        }, index * 200);
     });
-    // Add film grain effect that changes position randomly
-function updateFilmGrain() {
-    const grain = document.querySelector('.film-grain');
-    if (grain) {
-        const x = Math.floor(Math.random() * 3) - 1;
-        const y = Math.floor(Math.random() * 3) - 1;
-        grain.style.transform = `translate(${x}px, ${y}px)`;
-    }
-}
-
-// Occasionally flicker elements
-function occasionalFlicker() {
-    if (Math.random() > 0.97) {
-        const container = document.querySelector('.event-details-page');
-        if (container) {
-            container.style.opacity = '0.8';
-            setTimeout(() => {
-                container.style.opacity = '1';
-            }, 50);
-        }
-    }
-}
-
-// Apply vintage video effects
-setInterval(updateFilmGrain, 50);
-setInterval(occasionalFlicker, 500);
-
-// Video fallback - if video fails to load, add a class to body
-const video = document.querySelector('.background-video');
-if (video) {
-    video.addEventListener('error', function() {
+    
+    // Add navigation functionality
+    document.getElementById('nav-rules').addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothScrollTo(document.getElementById('rules-section'));
+    });
+    
+    document.getElementById('nav-coordinators').addEventListener('click', function(e) {
+        e.preventDefault();
+        smoothScrollTo(document.getElementById('coordinators-section'));
+    });
+    
+    // Hide loading screen after everything is loaded
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            loadingElement.classList.add('hide');
+            setTimeout(function() {
+                loadingElement.remove();
+            }, 500);
+        }, 1000);
+    });
+    
+    // Handle background video
+    const videoContainer = document.querySelector('.video-container');
+    const backgroundVideo = document.querySelector('.background-video');
+    
+    backgroundVideo.addEventListener('error', function() {
+        console.log("Video failed to load");
         document.body.classList.add('video-fallback');
     });
-
-    // Ensure video is completely loaded
-    video.addEventListener('loadeddata', function() {
-        // Video is loaded and can be played
-        console.log("Video loaded successfully");
-    });
-}
+    
+    // Add vintage effect elements
+    const vintageElements = `
+        <div class="noise-texture"></div>
+        <div class="vignette"></div>
+        <div class="scratches"></div>
+        <div class="film-grain"></div>
+    `;
+    
+    document.body.insertAdjacentHTML('afterbegin', vintageElements);
 });
