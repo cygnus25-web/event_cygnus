@@ -13,13 +13,13 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --background-color: #f9f9f9;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-color: #ffc107; /* Gold */
+            --secondary-color: #4e3a28; /* Dark Brown */
+            --background-color: #3c2f1b; /* Brown */
+            --text-color: #f5f5f5; /* Off-white */
+            --card-bg: #2b2317; /* Darker Brown */
+            --accent-color: #e09900; /* Darker Gold */
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             --transition-speed: 0.3s;
         }
 
@@ -33,13 +33,14 @@
         }
 
         header {
-            background-color: var(--secondary-color);
+            background-color: #2b2317;
             padding: 15px 20px;
             box-shadow: var(--shadow);
+            border-bottom: 1px solid var(--accent-color);
         }
 
         header .logo {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
             font-size: 1.2rem;
             display: flex;
@@ -48,7 +49,7 @@
         }
 
         header .logo:hover {
-            color: var(--primary-color);
+            color: #fff;
         }
 
         header .logo-icon {
@@ -74,7 +75,7 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            color: var(--secondary-color);
+            color: var(--primary-color);
             position: relative;
             display: inline-block;
             padding-bottom: 10px;
@@ -118,12 +119,12 @@
         .event-rules ul li {
             position: relative;
             padding: 10px 0 10px 30px;
-            border-bottom: 1px dashed #eee;
+            border-bottom: 1px solid rgba(255, 193, 7, 0.2);
         }
 
         .event-rules ul li::before {
             content: '•';
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-size: 1.5rem;
             position: absolute;
             left: 0;
@@ -164,7 +165,8 @@
 
         .coordinator-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: #fff;
         }
 
         .coordinator-card::before {
@@ -191,16 +193,23 @@
         .coordinator-card h4 {
             font-size: 1.4rem;
             margin-bottom: 10px;
-            color: var(--secondary-color);
+            color: var(--primary-color);
             position: relative;
             z-index: 1;
         }
 
         .coordinator-card p {
             margin-bottom: 8px;
-            color: #666;
+            color: #ccc;
             position: relative;
             z-index: 1;
+        }
+
+        .coordinator-card p i {
+            color: var(--primary-color);
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
         }
 
         .coordinator-card p:last-child {
@@ -341,6 +350,14 @@
                         "Individual or group performance.",
                         "Time limit: 5 minutes.",
                         "Any talent can be showcased."
+                    ];
+                    break;
+                case 'cirquiz':
+                    eventTitle = 'CirQuiz Details';
+                    eventRules = [
+                        "A challenge involving Quiz game.",
+                        "Individual participation.",
+                        "Topics include electrical and electronics engineering."
                     ];
                     break;
                 case 'mini':
