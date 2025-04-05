@@ -19,10 +19,6 @@
     }
     
     :root {
-      /* Adapting colors from footer styling */
-      --vintage-bg-dark: #2d1f15;
-      --vintage-bg-light: #483629;
-      --vintage-accent: #ffc107;
       --vintage-text: #f5f5dc;
       --vintage-paper: #e6dac1;
       --vintage-red: #b45a4c;
@@ -32,8 +28,7 @@
     
     body {
       height: 100vh;
-      /* Using background similar to footer */
-      background-color: var(--vintage-bg-dark);
+      width: 100vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -44,12 +39,52 @@
       font-family: 'Playfair Display', serif;
     }
     
+    /* Background video styling - enhanced for all devices */
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .background-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      object-fit: cover;
+    }
+    
+    /* For mobile devices in portrait - ensure video covers height */
+    @media (max-aspect-ratio: 16/9) {
+      .background-video {
+        height: 100%;
+        width: auto;
+      }
+    }
+    
+    /* For devices in landscape - ensure video covers width */
+    @media (min-aspect-ratio: 16/9) {
+      .background-video {
+        width: 100%;
+        height: auto;
+      }
+    }
+    
     .noise-texture {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       opacity: 0.15;
       pointer-events: none;
       z-index: 100;
@@ -59,8 +94,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%);
       pointer-events: none;
       z-index: 99;
@@ -70,12 +105,13 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       background-image: url("data:image/svg+xml,%3Csvg width='500' height='500' viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50,250 L450,250' stroke='white' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Cpath d='M250,50 L250,450' stroke='white' stroke-width='0.5' stroke-opacity='0.1'/%3E%3Cpath d='M100,100 L400,400' stroke='white' stroke-width='0.8' stroke-opacity='0.06'/%3E%3Cpath d='M400,100 L100,400' stroke='white' stroke-width='0.8' stroke-opacity='0.06'/%3E%3C/svg%3E");
       opacity: 0.15;
       pointer-events: none;
       z-index: 98;
+      background-size: cover;
     }
     
     .main-container {
@@ -87,40 +123,12 @@
       width: 90%;
       max-width: 600px;
       padding: 2rem;
-      /* Removed box styling */
     }
     
     @keyframes flicker {
       0%, 100% { opacity: 1; }
       98% { opacity: 1; }
       99% { opacity: 0.8; }
-    }
-    
-    /* Keep the countdown circle styling with updated colors */
-    .countdown-circle {
-      width: 75px;
-      height: 75px;
-      border-radius: 8px;
-      border: 2px solid var(--vintage-gold);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Special Elite', serif;
-      font-size: 0.8rem;
-      position: relative;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(145deg, #4d3a2e 0%, #3c2a1e 100%);
-      z-index: 3;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 3px rgba(255, 255, 255, 0.2);
-      color: var(--vintage-text);
-    }
-    
-    .countdown-circle span:first-child {
-      font-weight: bold;
-      font-size: 1.8rem;
-      color: var(--vintage-bright-gold);
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     .header-text {
@@ -164,17 +172,17 @@
       width: 100%;
       height: auto;
       max-width: 100%;
-      filter: sepia(30%) brightness(100%) contrast(110%);
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
       animation: oldFilm 8s infinite linear, pulse 4s infinite;
     }
     
     @keyframes oldFilm {
-      0% { filter: sepia(30%) brightness(100%) contrast(110%); }
-      20% { filter: sepia(30%) brightness(102%) contrast(110%); }
-      40% { filter: sepia(29%) brightness(98%) contrast(108%); }
-      60% { filter: sepia(32%) brightness(101%) contrast(112%); }
-      80% { filter: sepia(28%) brightness(99%) contrast(109%); }
-      100% { filter: sepia(30%) brightness(100%) contrast(110%); }
+      0% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+      20% { filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.55)); }
+      40% { filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45)); }
+      60% { filter: drop-shadow(0 0 11px rgba(255, 255, 255, 0.5)); }
+      80% { filter: drop-shadow(0 0 9px rgba(255, 255, 255, 0.45)); }
+      100% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
     }
     
     @keyframes pulse {
@@ -202,6 +210,7 @@
       animation: typing 3.5s steps(40, end) infinite;
       border-right: 2px solid var(--vintage-text);
       font-weight: bold;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     }
     
     @keyframes typing {
@@ -215,7 +224,7 @@
       width: 100%;
       max-width: 300px;
       height: 12px;
-      background: linear-gradient(145deg, #2c1a0e 0%, #1a0a00 100%);
+      background: rgba(0, 0, 0, 0.3);
       margin: 1rem 0;
       overflow: hidden;
       border: 2px solid var(--vintage-gold);
@@ -242,7 +251,7 @@
     
     .paper-stamp {
       background-color: var(--vintage-paper);
-      color: var(--vintage-bg-dark);
+      color: #000;
       padding: 0.5rem 1rem;
       transform: rotate(-3deg);
       font-family: 'Special Elite', cursive;
@@ -285,7 +294,7 @@
     
     .vintage-tag {
       font-family: 'Special Elite', serif;
-      background-color: rgba(245, 245, 220, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid var(--vintage-gold);
       color: var(--vintage-text);
       padding: 0.5rem 1rem;
@@ -298,6 +307,7 @@
       text-transform: uppercase;
       font-weight: bold;
       border-radius: 4px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     }
     
     @keyframes fadeUp {
@@ -305,37 +315,45 @@
       to { transform: translateY(0); opacity: 1; }
     }
     
-    /* Responsive styles */
+    /* Enhanced responsive styles for different devices */
     @media (max-width: 768px) {
       .header-text {
         font-size: clamp(1.2rem, 5vw, 1.8rem);
       }
       
-      .countdown-circle {
-        width: 65px;
-        height: 65px;
-        font-size: 0.7rem;
-      }
-      
-      .countdown-circle span:first-child {
-        font-size: 1.5rem;
+      .main-container {
+        padding: 1.5rem;
       }
     }
     
     @media (max-width: 480px) {
       .main-container {
-        padding: 1rem 0.5rem;
+        padding: 1rem;
         width: 95%;
       }
       
-      .countdown-circle {
-        width: 50px;
-        height: 50px;
-        font-size: 0.6rem;
+      .typewriter-text {
+        font-size: clamp(0.7rem, 3vw, 0.9rem);
+      }
+    }
+    
+    /* iPhone-specific optimization */
+    @media screen and (device-width: 390px) and (device-height: 844px),
+           screen and (device-width: 428px) and (device-height: 926px),
+           screen and (device-width: 375px) and (device-height: 812px) {
+      .main-container {
+        padding: 0.8rem;
+      }
+    }
+    
+    /* iPad/tablet optimization */
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      .main-container {
+        max-width: 650px;
       }
       
-      .countdown-circle span:first-child {
-        font-size: 1.2rem;
+      .main-logo {
+        max-width: 250px;
       }
     }
     
@@ -353,6 +371,18 @@
       .typewriter-container {
         margin: 0.5rem 0;
       }
+      
+      .vintage-tag {
+        margin-top: 0.5rem;
+        padding: 0.3rem 0.8rem;
+      }
+    }
+    
+    /* Small height screens */
+    @media (max-height: 500px) {
+      .main-container {
+        transform: scale(0.9);
+      }
     }
     
     /* Film grain animation */
@@ -367,6 +397,7 @@
       pointer-events: none;
       animation: filmGrain 0.5s steps(1) infinite;
       z-index: 101;
+      background-size: cover;
     }
     
     @keyframes filmGrain {
@@ -384,6 +415,13 @@
   </style>
 </head>
 <body>
+  <!-- Enhanced video container structure for better responsiveness -->
+  <div class="video-container">
+    <video class="background-video" autoplay muted loop playsinline>
+      <source src="img/BG1.mp4" type="video/mp4">
+    </video>
+  </div>
+  
   <!-- Vintage effects -->
   <div class="noise-texture"></div>
   <div class="vignette"></div>
@@ -391,7 +429,6 @@
   <div class="film-grain"></div>
   
   <div class="main-container">
-
     <h1 class="header-text">
       CYGNUS'25
       <span>charge your knowledge!</span>
@@ -441,10 +478,22 @@
     setInterval(updateFilmGrain, 50);
     setInterval(occasionalFlicker, 500);
     
-    // Add redirect after 5 seconds
+    // Video fallback - if video fails to load, add a class to body
+    const video = document.querySelector('.background-video');
+    video.addEventListener('error', function() {
+      document.body.classList.add('video-fallback');
+    });
+    
+    // Ensure video is completely loaded
+    video.addEventListener('loadeddata', function() {
+      // Video is loaded and can be played
+      console.log("Video loaded successfully");
+    });
+    
+    // Add redirect after 8 seconds
     setTimeout(function() {
       window.location.href = "main.html"; // Change this to your destination page
-    }, 8000); // 5000 milliseconds = 5 seconds
+    }, 8000);
   </script>
 </body>
 </html>
