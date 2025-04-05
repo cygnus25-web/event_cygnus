@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <!-- Additional meta tags for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CYGNUS'25 - Electrifying Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="img/BG.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-bolt logo-icon"></i>
+                CYGNUS'25
+            </a>
+            
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about-crescent">About Crescent</a></li>
+                <li><a href="#about-event">About Event</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#guidelines">Guidelines</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#sponsors">Sponsors</a></li>
+                <li class="register-link"><a href="#registration">Register</a></li>
+            </ul>
+            
+            <div class="nav-ornament ornament-left"></div>
+            <div class="nav-ornament ornament-right"></div>
+        </div>
+    </header>
+    <br> 
+
+  <!-- hero staring section   -->
+
+    <section class="hero" id="hero">
+        <h5 class="vintage-university-title">DEPARTMENT OF EEE & FINAL YEARS</h5>
+        <h5 style="
+    color: rgb(197, 112, 37);
+    font-size: 18px;
+    font-family: 'Playfair Display', 'Old Standard TT', 'Georgia', serif;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);">PROUDLY PRESENTS</h5>
+        <h5  style="
+        color: #ffc107;
+        font-size: 30px;
+        text-shadow: 2px 2px 4px #eabc28df;
+        font-family: 'Cinzel Decorative', 'Old Standard TT', 'Georgia', serif;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;">A NATIONAL LEVEL SYMPOSIUM</h5><br>
+        <img src="img/cygnus1.png" alt="CYGNUS'25 Logo" class="hero-image"><br>
+
+
+<!-- countdown code -->
+<div class="countdown-container">
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+    
+    <h7>Hurry! Registration Closing Soon! ⏳</h7>
+    
+    <div class="countdown-header" id="event-name-display"></div>
+    
+    <div class="countdown">
+        <div class="countdown-item">
+            <div class="countdown-value">
+                <div class="flip-card">
+                    <div class="flip-panel" id="days">00</div>
+                </div>
+            </div>
+            <div class="countdown-label">Days</div>
+        </div>
+        
+        <div class="countdown-item">
+            <div class="countdown-value">
+                <div class="flip-card">
+                    <div class="flip-panel" id="hours">00</div>
+                </div>
+            </div>
+            <div class="countdown-label">Hours</div>
+        </div>
+        
+        <div class="countdown-item">
+            <div class="countdown-value">
+                <div class="flip-card">
+                    <div class="flip-panel" id="minutes">00</div>
+                </div>
+            </div>
+            <div class="countdown-label">Minutes</div>
+        </div>
+        
+        <div class="countdown-item">
+            <div class="countdown-value">
+                <div class="flip-card">
+                    <div class="flip-panel" id="seconds">00</div>
+                </div>
+            </div>
+            <div class="countdown-label">Seconds</div>
+        </div>
+    </div>
+    <br>
+    <div class="footer">
+        <i class="fa-regular fa-calendar"></i> April 21, 2025 &nbsp; • &nbsp;
+        <i class="fa-solid fa-location-dot"></i> Convention Centre &nbsp; • &nbsp;
+        <i class="fa-regular fa-clock"></i> 9:30 AM
+    </div>
+</div>
+<br>
+ 
+ <!-- registration button -->
+
+        <div class="button-container">
+            <a href="#registration" class="register-btn">Register Now</a>
+        </div>
+    </section>
+    
+<!-- About Event Section - Wider Design with Original Colors -->
+<section id="about-event" class="about-event">
+    <div class="container">
+        <div class="section-header">
+            <h2>About CYGNUS'25</h2>
+        </div>
+        
+        <div class="event-showcase">
+            <div class="event-content-wrapper">
+                <div class="event-info">
+                    <img src="img/cygnus’25.png" alt="CYGNUS Event" class="event-image1">
+                    <div class="event-description-container">
+                        <p class="event-description">
+                            CYGNUS is a National level Symposium that is conducted every year by the Department of Electrical and Electronics Engineering. This symposium serves as a platform for discussing upcoming trends, exploring the latest technological advancements, and sharing innovative research. Imagine a world where technical prowess meets boundless fun. Here are 8 events spanning various domains that infuse technology with excitement and joy. All these events will feature guest speakers and experts who will share their knowledge and insights with the attendees. This symposium plays a crucial role in bridging the academic and industrial gap which contributes to the advancement of innovation and technology in Electrical and Electronics Engineering.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="event-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>500+</h3>
+                        <p>Participants Expected</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>1 Day</h3>
+                        <p>National level Symposium</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>8</h3>
+                        <p>Total Events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- tech and non-tech event -->
+
+<section class="events" id="events">
+    <div class="container">
+        <div class="section-header">
+            <h2>Events</h2>
+        </div>
+
+        <div class="event-category-container">
+            <div class="event-category">Technical Events</div>
+            <div class="event-cards-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-1.jpg" alt="Paper Presentation">
+                    </div>
+                    <div class="event-content">
+                        <h3>Paper Presentation</h3>
+                        <p>Showcase your innovative research and ideas to a panel of experts. Speak your mind, share your vision, and inspire the future.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 10:00 AM - 12:00 PM
+                            </div>
+                            <a href="event-details.html?event=paper" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-2.jpg" alt="Project Presentation">
+                    </div>
+                    <div class="event-content">
+                        <h3>Project Presentation</h3>
+                        <p>Present your working models and tech solutions that solve real-world problems. Let your engineering do the talking!</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 01:00 PM - 03:00 PM
+                            </div>
+                            <a href="event-details.html?event=project" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-4.png" alt="CirQuiz">
+                    </div>
+                    <div class="event-content">
+                        <h3>CirQuiz</h3>
+                        <p>A power-packed quiz to test your tech IQ and circuit knowledge. Only the brightest minds will light up the leaderboard!</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 03:30 PM - 05:30 PM
+                            </div>
+                            <a href="event-details.html?event=circuit" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-5.jpg" alt="Ampere Arena">
+                    </div>
+                    <div class="event-content">
+                        <h3>Ampere Arena</h3>
+                        <p>Gear up for intense, hands-on challenges and technical face-offs. It’s where skills meet sparks in a battle of brains.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 11:00 AM - 12:30 PM
+                            </div>
+                            <a href="event-details.html?event=ampere" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/t-3.jpg" alt="Tesla vs Edison">
+                    </div>
+                    <div class="event-content">
+                        <h3>Tesla vs Edison</h3>
+                        <p>Join the ultimate debate between two legendary minds. Pick your side and power your arguments with wit and logic.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 02:00 PM - 04:00 PM
+                            </div>
+                            <a href="event-details.html?event=tesla" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="event-category-container">
+            <div class="event-category">Non-Technical Events</div>
+            <div class="event-cards-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-1.jpg" alt="Watt A Biryani">
+                    </div>
+                    <div class="event-content">
+                        <h3>Watt A Biryani</h3>
+                        <p>Where food meets fun in the quirkiest way possible! Expect spicy challenges, flavor-packed fun, and plenty of laughs.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 10:00 AM - 12:00 PM
+                            </div>
+                            <a href="event-details.html?event=biryani" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-9.png" alt="FluX Your Talent">
+                    </div>
+                    <div class="event-content">
+                        <h3>FluX Your Talent</h3>
+                        <p>Step into the spotlight and let your passion flow — from dance to drama, music to mimicry. It’s your moment to shine!</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 02:00 PM - 04:00 PM
+                            </div>
+                            <a href="event-details.html?event=talent" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="img/nt-8.png" alt="Henna Artistry">
+                    </div>
+                    <div class="event-content">
+                        <h3>Henna Artistry</h3>
+                        <p>A set of fun mini-games and exciting activities.</p>
+                        <div class="event-overlay">
+                            <div class="event-time">
+                                <i class="far fa-clock"></i> 04:00 PM - 06:00 PM
+                            </div>
+                            <a href="event-details.html?event=mehendi" class="read-more-button">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section - Matches About Crescent Theme -->
+<section id="gallery" class="crescent-gallery">
+    <div class="container">
+        <div class="section-header">
+            <h2>Gallery</h2>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel gallery-carousel">
+                <div class="carousel-item active">
+                    <img src="img/6.JPG" alt="Gallery Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3.JPG" alt="Gallery Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/4.JPG" alt="Gallery Image 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1.JPG" alt="Gallery Image 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2.JPG" alt="Gallery Image 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/5.jpg" alt="Gallery Image 6">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <span class="carousel-control prev">&#10094;</span>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
+                </div>
+                <span class="carousel-control next">&#10095;</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- About Crescent Section - Wider Design with New Image Effect -->
+
+<section id="about-crescent" class="about-crescent">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Crescent</h2>
+        </div>
+        
+        <div class="crescent-showcase">
+            <div class="crescent-content-wrapper">
+                <div class="crescent-info">
+                    <div class="carousel-container">
+                        <div class="carousel">
+                            <div class="carousel-item active">
+                                <img src="img/cres1.jpeg" alt="Image 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cres2.jpeg" alt="Image 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/cres3.jpeg" alt="Image 3">
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <span class="carousel-control prev">&#10094;</span>
+                            <div class="carousel-dots">
+                                <span class="dot active" data-slide="0"></span>
+                                <span class="dot" data-slide="1"></span>
+                                <span class="dot" data-slide="2"></span>
+                            </div>
+                            <span class="carousel-control next">&#10095;</span>
+                        </div>
+                    </div>
+                    
+                    <div class="crescent-description-container">
+                        <p class="crescent-description">
+                            Established in 1984, B.S. Abdur Rahman Crescent Institute of Science and Technology, situated in Chennai near Tambaram, is a distinguished institution with a 38-year legacy of academic excellence. Our intellectual hub challenges conventional thinking, fostering a passion for redefining learning. With top-notch education, a green campus, and vibrant student life, we provide a conducive environment for holistic development.
+                        </p>
+                        <p class="crescent-description">
+                            Our diverse educational programs and student development clubs create a community that nurtures personal and professional growth, making our institution a lifelong home.
+                        </p>
+                    </div>
+                    
+                    <div class="crescent-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>40+</h3>
+                            <p>Years of Academic Excellence</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-building"></i>
+                            <h3>15+</h3>
+                            <p>Departments</p>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <h3>5000+</h3>
+                            <p>Students</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- General Guidelines Section -->
+
+<section id="guidelines" class="guidelines">
+    <div class="section-header">
+        <h2>General Guidelines</h2>
+    </div>
+    
+    <div class="guidelines-container">
+        <div class="guidelines-content">
+            <h3>Event Participation Rules</h3>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-user-edit"></i></div>
+                <div class="guideline-text">
+                    <h4>Registration Requirements</h4>
+                    <p>All participants must register beforehand through the online registration portal. On-spot registrations will be subject to availability and additional fees.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-users"></i></div>
+                <div class="guideline-text">
+                    <h4>Team Formation</h4>
+                    <p>Teams should consist of 2-4 members for group events. Individual participants are welcome for solo events.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-tshirt"></i></div>
+                <div class="guideline-text">
+                    <h4>Dress Code</h4>
+                    <p>Participants are expected to dress in smart casuals. College ID cards are mandatory for all participants.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-balance-scale"></i></div>
+                <div class="guideline-text">
+                    <h4>Judging Criteria</h4>
+                    <p>All events will be judged based on innovation, technical accuracy, presentation skills, and practical implementation. The decision of judges will be final.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                <div class="guideline-text">
+                    <h4>Code of Conduct</h4>
+                    <p>Participants are expected to maintain the decorum of the institution. Any misconduct will lead to immediate disqualification.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-certificate"></i></div>
+                <div class="guideline-text">
+                    <h4>Certificates</h4>
+                    <p>Participation certificates will be provided to all registered participants. Winners will receive additional merit certificates and prizes.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-clock"></i></div>
+                <div class="guideline-text">
+                    <h4>Punctuality</h4>
+                    <p>Participants must report 30 minutes before their event.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="guideline-text">
+                    <h4>Electronics</h4>
+                    <p>Mobile phones must be silenced during all events.</p>
+                </div>
+            </div>
+
+            <div class="guideline-item">
+                <div class="guideline-icon"><i class="fas fa-laptop"></i></div>
+                <div class="guideline-text">
+                    <h4>Equipment</h4>
+                    <p>Bring your own laptops for coding and design events.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+
+<!-- organizers -->
+
+<section class="organizers" id="organizers">
+    <div class="section-header">
+        <h2>Organizers</h2>
+    </div>
+
+    <div class="coordinator-category">
+        Faculty Coordinators
+    </div>
+
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/dean.jpeg" alt="Dean SECS" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Dr. C. Tharini</h3>
+            <p>DEAN-SECS</p>
+            <p>CONVENOR</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/hod.png" alt="HOD EEE" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Dr. S.Jennathu Beevi</h3>
+            <p>HOD-EEE </p>
+            <p>CONVENOR</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/clss_adviser1.png" alt="Assistant Professor" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Dr. K.R. Shanmuga Vadivu</h3>
+            <p>Assistant Professor</p>
+            <p>FACULTY COORDINATOR</p>
+        </div>
+    </div>
+
+    <div class="coordinator-category">
+        Student Coordinators
+    </div>
+
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/shams.jpg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Shams Tabrez Hussain A</h3>
+            <p>GENERAL SECRETARY</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/jahanger.png" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Jahanger J</h3>
+            <p>JOINT SECRETARY</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/sumaiya.PNG" alt="Treasurer" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Sumayathul Haire S</h3>
+            <p>TREASURER</p>
+        </div>
+    </div>
+    <div class="coordinator-category">
+        Designers
+    </div>
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/shoib.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Shoaib A</h3>
+            <p>final year</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/karthik.jpg" alt="Joint Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Karthik Hariharan V</h3>
+            <p>pre-final year</p>
+        </div>
+
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/afridy.jpg" alt="Treasurer" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Afridy R</h3>
+            <p>pre-final year</p>
+        </div>
+    </div>
+    <div class="coordinator-category">
+        Website Developer
+    </div>
+    <div class="coordinator-cards">
+        <div class="coordinator-card">
+            <div class="coordinator-avatar">
+                <img src="img/rahul.jpeg" alt="General Secretary" onerror="this.src='placeholder.jpg';">
+            </div>
+            <h3>Rahul A</h3>
+            <p>final year</p>
+        </div>
+</section>
+<br>
+<section id="sponsors" class="sponsors">
+    <div class="section-header">
+        <h2>Our Sponsors</h2>
+    </div>
+
+    <div class="event-showcase">
+        <div class="sponsors-container">
+            <!-- <div class="sponsor-item">
+                <img src="images/sponsor1.png" alt="Sponsor 1">
+            </div> -->
+            <div class="sponsor-item">
+                <img src="img/Poorvika-logo.webp" alt="Sponsor 2">
+            </div>
+            <!-- <div class="sponsor-item">
+                <img src="images/sponsor3.png" alt="Sponsor 3">
+            </div> -->
+        </div>
+    </div>
+</section>
+
+
+<!-- footer -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>
+                    <i class="fas fa-bolt"></i>
+                    CYGNUS'25
+                </h2>
+                <p>
+                    Join us for an electrifying technical fest experience! Participate in various events,
+                    showcase your skills, and connect with industry experts.
+                </p>
+
+                <style>
+                    .social-links {
+                        display: flex;
+                        justify-content: center; /* Centers horizontally */
+                        align-items: center; /* Centers vertically if needed */
+                        gap: 15px; /* Adds space between icons */
+                    }
+                
+                    .social-links a {
+                        font-size: 24px; /* Adjust icon size */
+                        text-decoration: none;
+                        color: rgb(255, 255, 255); /* Change color if needed */
+                    }
+                </style>
+                
+                <div class="social-links">
+                    <a href="https://maps.app.goo.gl/VRDzn1TJ4gpBWVCD7"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://www.instagram.com/cygnus_2025?igsh=YWtzMzI1aTI3azI3"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        
+GST Road, Vandalur, Chennai 600 048. Tamilnadu. INDIA 
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        +91 8903989413 <br>
+                        +91 8925291464 
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        cygnus25.eee@gmail.com
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            &copy; 2025 CYGNUS'25. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
