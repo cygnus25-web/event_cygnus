@@ -98,6 +98,11 @@
             margin-bottom: 50px;
             text-align: center;
             animation: fadeIn 0.7s ease-in-out;
+            min-height: 300px; /* Ensures space is reserved for image */
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .event-poster img {
@@ -107,11 +112,43 @@
             box-shadow: var(--shadow);
             border: 3px solid var(--primary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 300px; /* Minimum height for placeholder */
+            object-fit: cover;
         }
 
         .event-poster img:hover {
             transform: scale(1.02);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Placeholder for image */
+        .poster-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background-color: var(--card-bg);
+            border: 3px dashed var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+        }
+
+        .poster-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .poster-placeholder h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .poster-placeholder p {
+            margin: 10px 0 0 0;
+            color: var(--text-color);
         }
 
         .event-rules,
@@ -276,9 +313,10 @@
             <h2 id="event-title">Event Details</h2>
         </div>
 
-        <!-- Added poster section -->
-        <div class="event-poster">
-            <img id="event-poster-img" src="img/jahanger.png" alt="Event Poster">
+        <!-- Added poster section with placeholder fallback -->
+        <div class="event-poster" id="event-poster-container">
+            <img id="event-poster-img" src="" alt="Event Poster">
+            <!-- Placeholder will be inserted by JavaScript if image fails to load -->
         </div>
 
         <div class="event-rules">
@@ -325,12 +363,41 @@
     let eventTitle = '';
     let eventRules = [];
     let coordinators = [];
-    let posterPath = "img/jahanger.png"; // Default poster path
+    let posterPath = ""; // Default poster path will be set based on event
+    
+    // Function to create SVG placeholder for poster
+    function createPlaceholderSVG(title) {
+        return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+                <rect width="800" height="600" fill="#2b2317"/>
+                <text x="400" y="200" font-family="Arial" font-size="40" text-anchor="middle" fill="#ffc107">
+                    ${title}
+                </text>
+                <text x="400" y="300" font-family="Arial" font-size="30" text-anchor="middle" fill="#f5f5f5">
+                    CYGNUS'25
+                </text>
+                <text x="400" y="350" font-family="Arial" font-size="24" text-anchor="middle" fill="#e09900">
+                    Poster Image Unavailable
+                </text>
+            </svg>
+        `)}`;
+    }
+    
+    // Function to create HTML placeholder for poster
+    function createPlaceholderHTML(title) {
+        return `
+            <div class="poster-placeholder">
+                <i class="fas fa-image"></i>
+                <h3>${title}</h3>
+                <p>Poster image not available</p>
+            </div>
+        `;
+    }
 
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
-            posterPath = "img/jahanger.png"; // Paper presentation poster
+            posterPath = "img/paper_presentation.png"; // Use specific image for each event
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
@@ -358,7 +425,7 @@
             break;
         case 'project':
             eventTitle = 'Project Presentation';
-            posterPath = "img/jahanger.png"; // Project presentation poster
+            posterPath = "img/project_presentation.png"; 
             eventRules = [
                 "Teams can have 2-4 members.",
                 "Projects must be demonstrated in working condition with all required components.",
@@ -376,7 +443,7 @@
             break;
         case 'circuit':
             eventTitle = 'CircuitXplorer';
-            posterPath = "img/jahanger.png"; // CircuitXplorer poster
+            posterPath = "img/circuitxplorer.png"; 
             eventRules = [
                 "Teams consist of 2 members from the same college.",
                 "Multiple teams per college permitted.",
@@ -398,7 +465,7 @@
             break;
         case 'ampere':
             eventTitle = 'Ampere Arena';
-            posterPath = "img/jahanger.png"; // Ampere Arena poster
+            posterPath = "img/ampere_arena.png"; 
             eventRules = [
                 "Teams consist of exactly 3 members who must remain unchanged throughout the competition.",
                 "Absent team members cannot be replaced during any round.",
@@ -421,7 +488,7 @@
             break;
         case 'tesla':
             eventTitle = 'Tesla vs Edison (Debate)';
-            posterPath = "img/jahanger.png"; // Tesla vs Edison debate poster
+            posterPath = "img/tesla_edison.png"; 
             eventRules = [
                 "Individual registration only.",
                 "Team assignment by coordinators during event.",
@@ -442,7 +509,7 @@
             break;
         case 'biryani':
             eventTitle = 'Watt A Biryani';
-            posterPath = "img/jahanger.png"; // Biryani event poster
+            posterPath = "img/biryani.png"; 
             eventRules = [
                 "Each team must consist of exactly 4 members.",
                 "The entry fee for each person is RS 200.",
@@ -463,7 +530,7 @@
             break;
         case 'talent':
             eventTitle = 'Flux Your Talent';
-            posterPath = "img/jahanger.png"; // Talent hunt poster
+            posterPath = "img/talent.png"; 
             eventRules = [
                 "The events include singing, dancing, stand-up comedy, photography and face painting.",
                 "Performance duration: 2 to 5 minutes.",
@@ -485,7 +552,7 @@
             break;
         case 'mehendi':
             eventTitle = 'Mehendi';
-            posterPath = "img/jahanger.png"; // Mehendi event poster
+            posterPath = "img/mehendi.png"; 
             eventRules = [
                 "Open to all registered participants (per teams 2 member).",
                 "Time limit: Participants will have 1 hour to complete their mehendi design.",
@@ -505,18 +572,60 @@
             break;
         default:
             eventTitle = 'Event Details';
-            posterPath = "img/jahanger.png"; // Default poster
+            posterPath = "img/default_event.png"; // Default poster
             eventRules = ["Details not available."];
             coordinators = [
                 {name: "Contact Event Organizers", designation: "", contact: "", email: ""}
             ];
     }
 
+    // Update page title
     document.getElementById('event-title').innerText = eventTitle;
     
-    // Set poster image
-    document.getElementById('event-poster-img').src = posterPath;
-    document.getElementById('event-poster-img').alt = eventTitle + " Poster";
+    // Set poster image with fallback mechanism
+    const posterImg = document.getElementById('event-poster-img');
+    const posterContainer = document.getElementById('event-poster-container');
+    
+    // Try to set the image source
+    posterImg.src = posterPath;
+    posterImg.alt = eventTitle + " Poster";
+    
+    // Handle image loading error
+    posterImg.onerror = function() {
+        console.log("Image failed to load: " + posterPath);
+        
+        // Try with jahanger.png if that was not the initial path
+        if (posterPath !== "img/jahanger.png") {
+            console.log("Trying with jahanger.png instead");
+            this.src = "img/jahanger.png";
+            
+            // Add second error handler for the fallback image
+            this.onerror = function() {
+                console.log("Fallback image also failed to load");
+                
+                // Use SVG placeholder as final fallback
+                this.src = createPlaceholderSVG(eventTitle);
+                
+                // If SVG also fails, use HTML placeholder
+                this.onerror = function() {
+                    console.log("SVG placeholder failed, using HTML fallback");
+                    this.style.display = 'none';
+                    posterContainer.innerHTML = createPlaceholderHTML(eventTitle);
+                };
+            };
+        } else {
+            // If jahanger.png was already the path that failed, go straight to SVG
+            console.log("Using SVG placeholder");
+            this.src = createPlaceholderSVG(eventTitle);
+            
+            // If SVG also fails, use HTML placeholder
+            this.onerror = function() {
+                console.log("SVG placeholder failed, using HTML fallback");
+                this.style.display = 'none';
+                posterContainer.innerHTML = createPlaceholderHTML(eventTitle);
+            };
+        }
+    };
     
     // Populate rules
     const rulesList = document.getElementById('event-rules-list');
