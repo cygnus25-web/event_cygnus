@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
-            posterPath = "img/paper_presentation.png";
+            posterPath = "img/jahanger.png";
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
