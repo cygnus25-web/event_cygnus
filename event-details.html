@@ -289,12 +289,13 @@
     </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const event = urlParams.get('event');
     let eventTitle = '';
     let eventRules = [];
     let coordinators = [];
+    let posterUrl = ''; // Added for event poster
 
     switch (event) {
         case 'paper':
@@ -323,6 +324,7 @@
                 {name: "RAHUL A", designation: "Student Coordinator", contact: "8148130319", email: ""},
                 {name: "MAHESH V", designation: "Student Coordinator", contact: "9363041479", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'project':
             eventTitle = 'Project Presentation';
@@ -340,6 +342,7 @@
                 {name: "NATARAJAN K", designation: "Student Coordinator", contact: "7548869492", email: ""},
                 {name: "YUVARAJ G", designation: "Student Coordinator", contact: "9344172886", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'circuit':
             eventTitle = 'CircuitXplorer';
@@ -361,6 +364,7 @@
             coordinators = [
                 {name: "MUKESH RAJ G", designation: "Student Coordinator", contact: "9384629805", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'ampere':
             eventTitle = 'Ampere Arena';
@@ -383,6 +387,7 @@
                 {name: "THAMIZHARASAN T", designation: "Student Coordinator", contact: "9344647278", email: ""},
                 {name: "KUMLESH RAM", designation: "Student Coordinator", contact: "7540069764", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'tesla':
             eventTitle = 'Tesla vs Edison (Debate)';
@@ -403,6 +408,7 @@
                 {name: "NAVEETH SHARIFF N", designation: "Student Coordinator", contact: "7810016662", email: ""},
                 {name: "MOHAMMED S", designation: "Student Coordinator", contact: "9994362501", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'biryani':
             eventTitle = 'Watt A Biryani';
@@ -423,6 +429,7 @@
                 {name: "MOHAMMED AMMAR A", designation: "Student Coordinator", contact: "7305239214", email: ""},
                 {name: "SHAKTHI SAI KRISHNA K", designation: "Student Coordinator", contact: "9003064079", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'talent':
             eventTitle = 'Flux Your Talent';
@@ -444,6 +451,7 @@
                 {name: "RUNITH KUMAR", designation: "Photography Coordinator", contact: "8778688979", email: ""},
                 {name: "AYESHA SITHIKA M", designation: "Face Painting Coordinator", contact: "6382171906", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'mehendi':
             eventTitle = 'Mehendi';
@@ -463,6 +471,7 @@
             coordinators = [
                 {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""}
             ];
+            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         default:
             eventTitle = 'Event Details';
@@ -470,9 +479,36 @@
             coordinators = [
                 {name: "Contact Event Organizers", designation: "", contact: "", email: ""}
             ];
+            posterUrl = ''; // No poster for default case
     }
 
     document.getElementById('event-title').innerText = eventTitle;
+    
+    // Populate poster
+    const posterContainer = document.getElementById('poster-container');
+    if (posterUrl) {
+        // For development/testing, use a placeholder image if actual images aren't available yet
+        // In production, this would be the actual poster URLs
+        const imgElement = document.createElement('img');
+        imgElement.className = 'poster-img';
+        imgElement.alt = `${eventTitle} Poster`;
+        
+        // Check if this is a development environment without actual images
+        // In real implementation, you would just use posterUrl directly
+        if (posterUrl.startsWith('images/')) {
+            // Use placeholder for development/demo
+            imgElement.src = `/api/placeholder/600/800`;
+            // You can set a data attribute to keep track of the intended path
+            imgElement.setAttribute('data-original-path', posterUrl);
+        } else {
+            imgElement.src = posterUrl;
+        }
+        
+        posterContainer.innerHTML = '';
+        posterContainer.appendChild(imgElement);
+    } else {
+        posterContainer.innerHTML = '<div class="no-poster">Poster coming soon!</div>';
+    }
     
     // Populate rules
     const rulesList = document.getElementById('event-rules-list');
