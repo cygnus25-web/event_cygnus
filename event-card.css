@@ -366,6 +366,35 @@ header .logo-icon {
     text-align: center;
 }
 
+.back-button-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.back-button i {
+    margin-right: 8px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .content-container {
