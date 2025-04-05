@@ -286,8 +286,22 @@ body.menu-open {
 }
 
 /* Add padding to account for fixed header */
+/* Update this selector to add more padding */
 .event-details-page {
-    padding-top: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 30px; /* Increased top padding from 30px to 120px */
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+    z-index: 5;
+}
+
+/* Ensure the section header has higher z-index than the header */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10; /* Make sure this is higher than header's z-index (100) */
 }
 
 /* Media Queries for Responsive Navigation */
