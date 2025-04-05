@@ -304,6 +304,11 @@ body.menu-open {
     z-index: 10; /* Make sure this is higher than header's z-index (100) */
 }
 
+/* Add this to your CSS */
+#event-title, #rules-section, #coordinators-section {
+    scroll-margin-top: 120px;
+}
+
 /* Media Queries for Responsive Navigation */
 @media (max-width: 820px) {
     .hamburger {
