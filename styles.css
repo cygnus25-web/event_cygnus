@@ -2098,7 +2098,7 @@ footer * {
     object-fit: cover;
 }
 
-.video-overlay {
+/* .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -2106,7 +2106,7 @@ footer * {
     height: 100%;
     background: rgba(60, 42, 30, 0.8); /* Adjusted to match your site's color scheme */
     z-index: 1;
-}
+} */
 
 /* Modify existing body style to accommodate the video background */
 body {
