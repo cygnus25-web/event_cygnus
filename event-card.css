@@ -135,16 +135,34 @@ body.video-fallback {
 
 /* Header styling */
 header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     background-color: rgba(43, 35, 23, 0.9);
-    padding: 15px 20px;
+    padding: 15px 40px;
     box-shadow: var(--shadow);
     border-bottom: 1px solid var(--accent-color);
-    position: sticky;
-    top: 0;
     z-index: 100;
     transition: all 0.3s ease;
 }
 
+header.scrolled {
+    background-color: rgba(43, 35, 23, 0.95);
+    padding: 12px 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
 header .logo {
     display: flex;
     align-items: center;
