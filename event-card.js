@@ -91,12 +91,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Function to smooth scroll to an element
-    function smoothScrollTo(element) {
-        const yOffset = -80; // header height + some padding
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-
+ // Function to smooth scroll to an element
+function smoothScrollTo(element) {
+    const yOffset = -120; // Increase header height + padding
+    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: y, behavior: 'smooth'});
+}
     // Define event data
     switch (event) {
         case 'paper':
