@@ -93,6 +93,27 @@
             border-radius: 2px;
         }
 
+        /* Poster section styles */
+        .event-poster {
+            margin-bottom: 50px;
+            text-align: center;
+            animation: fadeIn 0.7s ease-in-out;
+        }
+
+        .event-poster img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 3px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-poster img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
         .event-rules,
         .event-coordinators {
             margin-bottom: 50px;
@@ -234,6 +255,10 @@
             .coordinator-card {
                 width: 100%;
             }
+            
+            .event-poster img {
+                max-width: 90%;
+            }
         }
     </style>
 </head>
@@ -249,6 +274,11 @@
     <section class="event-details-page">
         <div class="section-header">
             <h2 id="event-title">Event Details</h2>
+        </div>
+
+        <!-- Added poster section -->
+        <div class="event-poster">
+            <img id="event-poster-img" src="img/jahanger.png" alt="Event Poster">
         </div>
 
         <div class="event-rules">
@@ -289,17 +319,18 @@
     </section>
 
     <script>
-   document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const event = urlParams.get('event');
     let eventTitle = '';
     let eventRules = [];
     let coordinators = [];
-    let posterUrl = ''; // Added for event poster
+    let posterPath = "img/jahanger.png"; // Default poster path
 
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
+            posterPath = "img/jahanger.png"; // Paper presentation poster
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
@@ -324,10 +355,10 @@
                 {name: "RAHUL A", designation: "Student Coordinator", contact: "8148130319", email: ""},
                 {name: "MAHESH V", designation: "Student Coordinator", contact: "9363041479", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'project':
             eventTitle = 'Project Presentation';
+            posterPath = "img/jahanger.png"; // Project presentation poster
             eventRules = [
                 "Teams can have 2-4 members.",
                 "Projects must be demonstrated in working condition with all required components.",
@@ -342,10 +373,10 @@
                 {name: "NATARAJAN K", designation: "Student Coordinator", contact: "7548869492", email: ""},
                 {name: "YUVARAJ G", designation: "Student Coordinator", contact: "9344172886", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'circuit':
             eventTitle = 'CircuitXplorer';
+            posterPath = "img/jahanger.png"; // CircuitXplorer poster
             eventRules = [
                 "Teams consist of 2 members from the same college.",
                 "Multiple teams per college permitted.",
@@ -364,10 +395,10 @@
             coordinators = [
                 {name: "MUKESH RAJ G", designation: "Student Coordinator", contact: "9384629805", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'ampere':
             eventTitle = 'Ampere Arena';
+            posterPath = "img/jahanger.png"; // Ampere Arena poster
             eventRules = [
                 "Teams consist of exactly 3 members who must remain unchanged throughout the competition.",
                 "Absent team members cannot be replaced during any round.",
@@ -387,10 +418,10 @@
                 {name: "THAMIZHARASAN T", designation: "Student Coordinator", contact: "9344647278", email: ""},
                 {name: "KUMLESH RAM", designation: "Student Coordinator", contact: "7540069764", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'tesla':
             eventTitle = 'Tesla vs Edison (Debate)';
+            posterPath = "img/jahanger.png"; // Tesla vs Edison debate poster
             eventRules = [
                 "Individual registration only.",
                 "Team assignment by coordinators during event.",
@@ -408,10 +439,10 @@
                 {name: "NAVEETH SHARIFF N", designation: "Student Coordinator", contact: "7810016662", email: ""},
                 {name: "MOHAMMED S", designation: "Student Coordinator", contact: "9994362501", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'biryani':
             eventTitle = 'Watt A Biryani';
+            posterPath = "img/jahanger.png"; // Biryani event poster
             eventRules = [
                 "Each team must consist of exactly 4 members.",
                 "The entry fee for each person is RS 200.",
@@ -429,10 +460,10 @@
                 {name: "MOHAMMED AMMAR A", designation: "Student Coordinator", contact: "7305239214", email: ""},
                 {name: "SHAKTHI SAI KRISHNA K", designation: "Student Coordinator", contact: "9003064079", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'talent':
             eventTitle = 'Flux Your Talent';
+            posterPath = "img/jahanger.png"; // Talent hunt poster
             eventRules = [
                 "The events include singing, dancing, stand-up comedy, photography and face painting.",
                 "Performance duration: 2 to 5 minutes.",
@@ -451,10 +482,10 @@
                 {name: "RUNITH KUMAR", designation: "Photography Coordinator", contact: "8778688979", email: ""},
                 {name: "AYESHA SITHIKA M", designation: "Face Painting Coordinator", contact: "6382171906", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         case 'mehendi':
             eventTitle = 'Mehendi';
+            posterPath = "img/jahanger.png"; // Mehendi event poster
             eventRules = [
                 "Open to all registered participants (per teams 2 member).",
                 "Time limit: Participants will have 1 hour to complete their mehendi design.",
@@ -471,44 +502,21 @@
             coordinators = [
                 {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""}
             ];
-            posterUrl = 'img/jahanger.png'; // Updated to direct path
             break;
         default:
             eventTitle = 'Event Details';
+            posterPath = "img/jahanger.png"; // Default poster
             eventRules = ["Details not available."];
             coordinators = [
                 {name: "Contact Event Organizers", designation: "", contact: "", email: ""}
             ];
-            posterUrl = ''; // No poster for default case
     }
 
     document.getElementById('event-title').innerText = eventTitle;
     
-    // Populate poster
-    const posterContainer = document.getElementById('poster-container');
-    if (posterUrl) {
-        // For development/testing, use a placeholder image if actual images aren't available yet
-        // In production, this would be the actual poster URLs
-        const imgElement = document.createElement('img');
-        imgElement.className = 'poster-img';
-        imgElement.alt = `${eventTitle} Poster`;
-        
-        // Check if this is a development environment without actual images
-        // In real implementation, you would just use posterUrl directly
-        if (posterUrl.startsWith('images/')) {
-            // Use placeholder for development/demo
-            imgElement.src = `/api/placeholder/600/800`;
-            // You can set a data attribute to keep track of the intended path
-            imgElement.setAttribute('data-original-path', posterUrl);
-        } else {
-            imgElement.src = posterUrl;
-        }
-        
-        posterContainer.innerHTML = '';
-        posterContainer.appendChild(imgElement);
-    } else {
-        posterContainer.innerHTML = '<div class="no-poster">Poster coming soon!</div>';
-    }
+    // Set poster image
+    document.getElementById('event-poster-img').src = posterPath;
+    document.getElementById('event-poster-img').alt = eventTitle + " Poster";
     
     // Populate rules
     const rulesList = document.getElementById('event-rules-list');
