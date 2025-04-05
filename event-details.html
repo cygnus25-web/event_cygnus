@@ -4,62 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Details - CYGNUS'25</title>
-    
     <link rel="stylesheet" href="event-card.css">
-    <link rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="description" content="CYGNUS'25 - Department of Electrical and Electronics Engineering Technical Symposium">
 </head>
-<!-- Video Background and Effects (from loading page) -->
-<div class="video-container">
-  <video class="background-video" autoplay muted loop playsinline>
-    <source src="img/BG1.mp4" type="video/mp4">
-  </video>
-</div>
-
-<!-- Vintage effects -->
-<div class="noise-texture"></div>
-<div class="vignette"></div>
-<div class="scratches"></div>
-<div class="film-grain"></div>
 <body>
+    <!-- Background video -->
+    <div class="video-container">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="video/vintage_background.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <!-- Header -->
     <header>
         <a href="index.html" class="logo">
-            <i class="fas fa-arrow-left logo-icon"></i>
-            Back to CYGNUS'25
+            <i class="fas fa-bolt logo-icon"></i>
+            CYGNUS'25
         </a>
     </header>
-
-    <section class="event-details-page">
+    
+    <!-- Event details container -->
+    <div class="event-details-page">
         <div class="section-header">
             <h2 id="event-title">Event Details</h2>
         </div>
-
+        
         <div class="content-container">
-            <!-- Poster section (left side) -->
+            <!-- Event poster -->
             <div class="event-poster" id="event-poster-container">
-                <img id="event-poster-img" src="" alt="Event Poster">
-                <!-- Placeholder will be inserted by JavaScript if image fails to load -->
+                <img id="event-poster-img" src="img/loading.gif" alt="Loading...">
             </div>
-
-            <!-- Rules section (right side) -->
-            <div class="event-rules">
-                <h3>Rules and Regulations</h3>
-                <ul id="event-rules-list">
-                    <!-- Will be populated by JavaScript -->
+            
+            <!-- Event rules -->
+            <div class="event-rules" id="rules-section">
+                <h3>Rules & Guidelines <a href="#" id="nav-rules" class="section-nav"><i class="fas fa-link"></i></a></h3>
+                <ul id="rules-list">
+                    <!-- Rules will be populated by JavaScript -->
                 </ul>
             </div>
         </div>
-
-        <div class="event-coordinators">
-            <h3>Event Coordinators</h3>
-            <div class="coordinator-cards">
+        
+        <!-- Event coordinators -->
+        <div class="event-coordinators" id="coordinators-section">
+            <h3>Event Coordinators <a href="#" id="nav-coordinators" class="section-nav"><i class="fas fa-link"></i></a></h3>
+            <div class="coordinator-cards" id="coordinator-cards">
                 <!-- Coordinator cards will be populated by JavaScript -->
             </div>
         </div>
-    </section>
-
+        
+        <!-- Back to events button -->
+        <div class="back-button-container">
+            <a href="events.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Events
+            </a>
+        </div>
+    </div>
+    
     <script src="event-card.js"></script>
 </body>
 </html>
