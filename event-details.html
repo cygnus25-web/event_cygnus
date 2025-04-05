@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Details - CYGNUS'25</title>
-
-    <link rel="stylesheet" href="event-card.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <header>
-        <a href="html-code.html" class="logo">
+        <a href="index.html" class="logo">
             <i class="fas fa-arrow-left logo-icon"></i>
             Back to CYGNUS'25
         </a>
@@ -26,20 +25,20 @@
             <h2 id="event-title">Event Details</h2>
         </div>
 
-        <!-- Added poster section with placeholder fallback -->
-        <div class="event-poster" id="event-poster-container">
-            <img id="event-poster-img" src="" alt="Event Poster">
-            <!-- Placeholder will be inserted by JavaScript if image fails to load -->
-        </div>
+        <div class="content-container">
+            <!-- Poster section (left side) -->
+            <div class="event-poster" id="event-poster-container">
+                <img id="event-poster-img" src="" alt="Event Poster">
+                <!-- Placeholder will be inserted by JavaScript if image fails to load -->
+            </div>
 
-        <div class="event-rules">
-            <h3>Rules and Regulations</h3>
-            <ul id="event-rules-list">
-                <li>Rule 1: To be updated.</li>
-                <li>Rule 2: To be updated.</li>
-                <li>Rule 3: To be updated.</li>
-                <li>Rule 4: To be updated.</li>
-            </ul>
+            <!-- Rules section (right side) -->
+            <div class="event-rules">
+                <h3>Rules and Regulations</h3>
+                <ul id="event-rules-list">
+                    <!-- Will be populated by JavaScript -->
+                </ul>
+            </div>
         </div>
 
         <div class="event-coordinators">
@@ -50,7 +49,6 @@
         </div>
     </section>
 
-    <script src="event-card.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
