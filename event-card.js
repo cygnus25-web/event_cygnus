@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
-            posterPath = "img/paper_presentation.png"; // Use specific image for each event
+            posterPath = "img/paper_presentation.png";
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         default:
             eventTitle = 'Event Details';
-            posterPath = "img/default_event.png"; // Default poster
+            posterPath = "img/default_event.png";
             eventRules = ["Details not available."];
             coordinators = [
                 {name: "Contact Event Organizers", designation: "", contact: "", email: ""}
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = html;
         coordinatorCards.appendChild(card);
         
-        // Add animation delay
+        // Add animation delay for staggered entry
         setTimeout(() => {
             card.style.animation = 'popIn 0.5s ease-in-out forwards';
         }, index * 200);
