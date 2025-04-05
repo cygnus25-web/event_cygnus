@@ -1,0 +1,285 @@
+:root {
+    --primary-color: #ffc107; /* Gold */
+    --secondary-color: #4e3a28; /* Dark Brown */
+    --background-color: #3c2f1b; /* Brown */
+    --text-color: #f5f5f5; /* Off-white */
+    --card-bg: #2b2317; /* Darker Brown */
+    --accent-color: #e09900; /* Darker Gold */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2b2317;
+    padding: 15px 20px;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+header .logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    transition: all var(--transition-speed);
+}
+
+header .logo:hover {
+    color: #fff;
+}
+
+header .logo-icon {
+    margin-right: 10px;
+}
+
+.event-details-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+    width: 50%;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* Poster section styles */
+.event-poster {
+    margin-bottom: 50px;
+    text-align: center;
+    animation: fadeIn 0.7s ease-in-out;
+    min-height: 300px; /* Ensures space is reserved for image */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-poster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 300px; /* Minimum height for placeholder */
+    object-fit: cover;
+}
+
+.event-poster img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Placeholder for image */
+.poster-placeholder {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    background-color: var(--card-bg);
+    border: 3px dashed var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.poster-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.poster-placeholder h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.poster-placeholder p {
+    margin: 10px 0 0 0;
+    color: var(--text-color);
+}
+
+.event-rules,
+.event-coordinators {
+    margin-bottom: 50px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.event-rules h3,
+.event-coordinators h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+.event-rules ul {
+    list-style-type: none;
+    margin-left: 10px;
+}
+
+.event-rules ul li {
+    position: relative;
+    padding: 10px 0 10px 30px;
+    border-bottom: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.event-rules ul li::before {
+    content: '•';
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.coordinator-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.coordinator-card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    transition: all var(--transition-speed);
+    transform: scale(1);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--primary-color);
+    opacity: 0;
+    animation: popIn 0.5s ease-in-out forwards;
+}
+
+.coordinator-card:nth-child(1) { animation-delay: 0.1s; }
+.coordinator-card:nth-child(2) { animation-delay: 0.3s; }
+.coordinator-card:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    70% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.coordinator-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #fff;
+}
+
+.coordinator-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    opacity: 0.2;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.coordinator-card:hover::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    left: -150px;
+}
+
+.coordinator-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.coordinator-card p {
+    margin-bottom: 8px;
+    color: #ccc;
+    position: relative;
+    z-index: 1;
+}
+
+.coordinator-card p i {
+    color: var(--primary-color);
+    margin-right: 8px;
+    width: 16px;
+    text-align: center;
+}
+
+.coordinator-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .event-details-page {
+        padding: 20px 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .event-rules h3,
+    .event-coordinators h3 {
+        font-size: 1.5rem;
+    }
+    
+    .coordinator-card {
+        width: 100%;
+    }
+    
+    .event-poster img {
+        max-width: 90%;
+    }
+}
