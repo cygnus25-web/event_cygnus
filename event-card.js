@@ -5,6 +5,54 @@ document.addEventListener('DOMContentLoaded', function() {
     loadingElement.innerHTML = '<div class="loading-spinner"></div>';
     document.body.appendChild(loadingElement);
     
+    // Header scroll and menu functionality
+    const header = document.getElementById('main-header');
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Scroll effect for header
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Toggle menu function
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    }
+    
+    // Add click event to hamburger menu
+    hamburger.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = hamburger.contains(event.target) || navMenu.contains(event.target);
+        
+        if (!isClickInside && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    // Close menu when clicking nav links
+    const navLinks = document.querySelectorAll('.nav-menu li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // Add a fallback touch event for mobile devices
+    hamburger.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        toggleMenu();
+    });
     // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const event = urlParams.get('event');
