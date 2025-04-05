@@ -286,25 +286,17 @@ body.menu-open {
 }
 
 /* Add padding to account for fixed header */
-/* Update this selector to add more padding */
+/* Update the top padding in event-details-page class */
 .event-details-page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 20px 30px; /* Increased top padding from 30px to 120px */
+    padding: 120px 20px 30px; /* Increase top padding from 30px to 120px */
     animation: fadeIn 0.5s ease-in-out;
     position: relative;
     z-index: 5;
 }
 
-/* Ensure the section header has higher z-index than the header */
-.section-header {
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 10; /* Make sure this is higher than header's z-index (100) */
-}
-
-/* Add this to your CSS */
+/* Add/adjust scroll-margin-top for sections */
 #event-title, #rules-section, #coordinators-section {
     scroll-margin-top: 120px;
 }
