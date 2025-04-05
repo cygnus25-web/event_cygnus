@@ -304,4 +304,44 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.animation = 'popIn 0.5s ease-in-out forwards';
         }, index * 200);
     });
+    // Add film grain effect that changes position randomly
+function updateFilmGrain() {
+    const grain = document.querySelector('.film-grain');
+    if (grain) {
+        const x = Math.floor(Math.random() * 3) - 1;
+        const y = Math.floor(Math.random() * 3) - 1;
+        grain.style.transform = `translate(${x}px, ${y}px)`;
+    }
+}
+
+// Occasionally flicker elements
+function occasionalFlicker() {
+    if (Math.random() > 0.97) {
+        const container = document.querySelector('.event-details-page');
+        if (container) {
+            container.style.opacity = '0.8';
+            setTimeout(() => {
+                container.style.opacity = '1';
+            }, 50);
+        }
+    }
+}
+
+// Apply vintage video effects
+setInterval(updateFilmGrain, 50);
+setInterval(occasionalFlicker, 500);
+
+// Video fallback - if video fails to load, add a class to body
+const video = document.querySelector('.background-video');
+if (video) {
+    video.addEventListener('error', function() {
+        document.body.classList.add('video-fallback');
+    });
+
+    // Ensure video is completely loaded
+    video.addEventListener('loadeddata', function() {
+        // Video is loaded and can be played
+        console.log("Video loaded successfully");
+    });
+}
 });
