@@ -53,13 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         toggleMenu();
     });
+    
     // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const event = urlParams.get('event');
     let eventTitle = '';
     let eventRules = [];
     let coordinators = [];
-    let posterPath = ""; // Default poster path will be set based on event
+    let posterPaths = []; // Array to store multiple poster paths
     
     // Function to create SVG placeholder for poster
     function createPlaceholderSVG(title) {
@@ -89,19 +90,19 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
     }
-
+    
     // Function to smooth scroll to an element
- // Function to smooth scroll to an element
-function smoothScrollTo(element) {
-    const yOffset = -120; // Increase header height + padding
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y, behavior: 'smooth'});
-}
-    // Define event data
+    function smoothScrollTo(element) {
+        const yOffset = -120; // Increase header height + padding
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+    
+    // Define event data with multiple poster images
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
-            posterPath = "posters/Paper_presentation.png";
+            posterPaths = ["posters/Paper_presentation.png", "posters/Paper_presentation_RULES_1.png","posters/Paper_presentation_RULES_2.png"];
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
@@ -126,7 +127,7 @@ function smoothScrollTo(element) {
             break;
         case 'project':
             eventTitle = 'Project Presentation';
-            posterPath = "posters/project_presentation.png"; 
+            posterPaths = ["posters/project_presentation.png", "posters/project_presentation_RULES.png"]; 
             eventRules = [
                 "Teams can have 2-4 members.",
                 "Projects must be demonstrated in working condition with all required components.",
@@ -144,7 +145,7 @@ function smoothScrollTo(element) {
             break;
         case 'circuit':
             eventTitle = 'CirQuiz';
-            posterPath = "posters/CIRQUIZ.png"; 
+            posterPaths = ["posters/CIRQUIZ.png", "posters/CIRQUIZ_RULES_1.png", "posters/CIRQUIZ_RULES_2.png"]; 
             eventRules = [
                 "Teams consist of 2 members from the same college.",
                 "Multiple teams per college permitted.",
@@ -163,11 +164,11 @@ function smoothScrollTo(element) {
             coordinators = [
                 {name: "MUKESH RAJ G", designation: "Student Coordinator", contact: "9384629805", email: ""},
                 {name: "KUMLESH RAM", designation: "Student Coordinator", contact: "7540069764", email: ""}
-                           ];
+            ];
             break;
         case 'ampere':
             eventTitle = 'Ampere Arena';
-            posterPath = "posters/Ampere Arena.png"; 
+            posterPaths = ["posters/Ampere Arena.png", "posters/Ampere Arena_RULE_1.png", "posters/Ampere Arena_RULE_2.png", "posters/Ampere Arena_RULE_3.png"]; 
             eventRules = [
                 "Teams consist of exactly 3 members who must remain unchanged throughout the competition.",
                 "Absent team members cannot be replaced during any round.",
@@ -190,12 +191,12 @@ function smoothScrollTo(element) {
             ];
             coordinators = [
                 {name: "HAFIZ ABDULLA K P", designation: "Student Coordinator", contact: "9447781289", email: ""},
-                {name: "THAMIZHARASAN T", designation: "Student Coordinator", contact: "9344647278", email: ""},
-                           ];
+                {name: "THAMIZHARASAN T", designation: "Student Coordinator", contact: "9344647278", email: ""}
+            ];
             break;
         case 'tesla':
             eventTitle = 'Tesla vs Edison';
-            posterPath = "posters/Tesla VS Edition.png"; 
+            posterPaths = ["posters/Tesla VS Edition.png", "posters/Tesla VS Edition_RULE.png"]; 
             eventRules = [
                 "Individual registration only.",
                 "Team assignment by coordinators during event.",
@@ -216,7 +217,7 @@ function smoothScrollTo(element) {
             break;
         case 'biryani':
             eventTitle = 'Watt A Biryani';
-            posterPath = "img/biryani.png"; 
+            posterPaths = ["img/biryani.png", "img/biryani_2.png"]; 
             eventRules = [
                 "Each team must consist of exactly 4 members.",
                 "Entry fees must be paid in full at the time of registration.",
@@ -236,7 +237,14 @@ function smoothScrollTo(element) {
             break;
         case 'talent':
             eventTitle = 'Flux Your Talent';
-            posterPath = "img/talent.png"; 
+            posterPaths = [
+                "img/talent.png", 
+                "img/talent_singing.png", 
+                "img/talent_dancing.png", 
+                "img/talent_comedy.png", 
+                "img/talent_photography.png", 
+                "img/talent_facepainting.png"
+            ]; 
             eventRules = [
                 "The events include singing, dancing, stand-up comedy, photography and face painting.",
                 "Performance duration: 2 to 5 minutes.",
@@ -258,7 +266,7 @@ function smoothScrollTo(element) {
             break;
         case 'mehendi':
             eventTitle = 'HENNA ARTISTRY';
-            posterPath = "img/mehendi.png"; 
+            posterPaths = ["img/mehendi.png", "img/mehendi_2.png"]; 
             eventRules = [
                 "Open to all registered participants (per teams 2 member).",
                 "Time limit: Participants will have 1 hour to complete their mehendi design.",
@@ -275,64 +283,152 @@ function smoothScrollTo(element) {
             coordinators = [
                 {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""},
                 {name: "SUMAYATHUL HAIREE S", designation: "Student Coordinator", contact: "9025014134", email: ""}
-
             ];
             break;
         default:
             eventTitle = 'Event Details';
-            posterPath = "img/default_event.png";
+            posterPaths = ["img/default_event.png"];
             eventRules = ["Details not available."];
             coordinators = [
                 {name: "Contact Event Organizers", designation: "", contact: "", email: ""}
             ];
     }
-
+    
     // Update page title
     document.getElementById('event-title').innerText = eventTitle;
     document.title = eventTitle + " - CYGNUS'25";
     
-    // Set poster image with enhanced fallback mechanism
-    const posterImg = document.getElementById('event-poster-img');
-    const posterContainer = document.getElementById('event-poster-container');
+    // Setup carousel
+    const carouselContainer = document.getElementById('poster-carousel-inner');
+    const indicatorsContainer = document.getElementById('poster-indicators');
     
-    // Preload image to check if it exists
-    const imagePreloader = new Image();
-    imagePreloader.src = posterPath;
-    
-    imagePreloader.onload = function() {
-        // Image exists, set it
-        posterImg.src = posterPath;
-        posterImg.alt = eventTitle + " Poster";
+    // Create poster slides
+    posterPaths.forEach((path, index) => {
+        const slide = document.createElement('div');
+        slide.className = 'poster-slide';
+        slide.innerHTML = `<img src="${path}" alt="${eventTitle} Poster ${index + 1}" loading="lazy">`;
+        carouselContainer.appendChild(slide);
         
-        // Add lazy loading for better performance
-        posterImg.setAttribute('loading', 'lazy');
-    };
-    
-   imagePreloader.onerror = function() {
-        console.log("Image failed to load: " + posterPath);
+        // Create indicator
+        const indicator = document.createElement('div');
+        indicator.className = 'poster-indicator' + (index === 0 ? ' active' : '');
+        indicator.dataset.slide = index;
+        indicatorsContainer.appendChild(indicator);
         
-        // Try with default image if that was not the initial path
-        if (posterPath !== "img/default_event.png") {
-            posterPath = "img/default_event.png";
-            posterImg.src = posterPath;
-            posterImg.alt = eventTitle + " Poster";
-        } else {
-            // Both paths failed, use SVG placeholder
-            posterImg.style.display = "none";
-            
-            // Create a placeholder div with styling
-            const placeholderDiv = document.createElement('div');
-            placeholderDiv.className = 'poster-placeholder';
-            placeholderDiv.innerHTML = `
-                <i class="fas fa-image"></i>
-                <h3>${eventTitle}</h3>
-                <p>CYGNUS'25</p>
-                <p>Poster image not available</p>
-            `;
-            
-            posterContainer.appendChild(placeholderDiv);
+        // Add click event to indicator
+        indicator.addEventListener('click', function() {
+            showSlide(index);
+        });
+    });
+    
+    // If there's only one image, hide navigation
+    if (posterPaths.length <= 1) {
+        document.getElementById('poster-prev').style.display = 'none';
+        document.getElementById('poster-next').style.display = 'none';
+        document.getElementById('poster-indicators').style.display = 'none';
+    }
+    
+    // Carousel navigation
+    let currentSlide = 0;
+    
+    function showSlide(n) {
+        // Update current slide index
+        currentSlide = n;
+        
+        // Handle wrapping
+        if (currentSlide >= posterPaths.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = posterPaths.length - 1;
+        
+        // Move carousel
+        carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        const indicators = document.querySelectorAll('.poster-indicator');
+        indicators.forEach((indicator, index) => {
+            if (index === currentSlide) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    }
+    
+    // Previous/Next buttons
+    document.getElementById('poster-prev').addEventListener('click', function() {
+        showSlide(currentSlide - 1);
+    });
+    
+    document.getElementById('poster-next').addEventListener('click', function() {
+        showSlide(currentSlide + 1);
+    });
+    
+    // Auto scroll carousel if more than one image
+    let autoScrollInterval;
+    
+    function startAutoScroll() {
+        if (posterPaths.length > 1) {
+            autoScrollInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000); // Change slide every 5 seconds
         }
+    }
+    
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+    
+    // Start auto-scroll
+    startAutoScroll();
+    
+    // Pause auto-scroll when hovering over carousel
+    document.querySelector('.poster-carousel').addEventListener('mouseenter', stopAutoScroll);
+    document.querySelector('.poster-carousel').addEventListener('mouseleave', startAutoScroll);
+    
+    // Handle touch events for better mobile experience
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const carousel = document.querySelector('.poster-carousel');
+    
+    carousel.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoScroll();
+    });
+    
+    carousel.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoScroll();
+    });
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            // Swipe left - next slide
+            showSlide(currentSlide + 1);
+        }
+        
+        if (touchEndX > touchStartX) {
+            // Swipe right - previous slide
+            showSlide(currentSlide - 1);
+        }
+    }
+    
+    // Fallback for when images don't load
+    const handleImageError = function() {
+        const affectedSlide = this.parentElement;
+        const slideIndex = Array.from(carouselContainer.children).indexOf(affectedSlide);
+        
+        // Replace with placeholder
+        this.style.display = "none";
+        affectedSlide.innerHTML += createPlaceholderHTML(eventTitle);
     };
+    
+    // Set error handlers for all images
+    setTimeout(() => {
+        document.querySelectorAll('.poster-slide img').forEach(img => {
+            img.addEventListener('error', handleImageError);
+        });
+    }, 100);
     
     // Populate rules list
     const rulesList = document.getElementById('rules-list');
