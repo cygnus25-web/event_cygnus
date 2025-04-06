@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'project':
             eventTitle = 'Project Presentation';
-            posterPaths = ["posters/project_presentation.png", "posters/project_presentation_RULES.png"]; 
+            posterPaths = ["posters/Project_presentation.png", "posters/Project_presentation_RULES.png"]; 
             eventRules = [
                 "Teams can have 2-4 members.",
                 "Projects must be demonstrated in working condition with all required components.",
