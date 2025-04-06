@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'biryani':
             eventTitle = 'Watt A Biryani';
-            posterPaths = ["img/biryani.png", "img/biryani_2.png"]; 
+            posterPaths = ["posters/Watt a Biriyani.png", "posters/watt a Briyani_RULE .png"]; 
             eventRules = [
                 "Each team must consist of exactly 4 members.",
                 "Entry fees must be paid in full at the time of registration.",
@@ -238,12 +238,12 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'talent':
             eventTitle = 'Flux Your Talent';
             posterPaths = [
-                "img/talent.png", 
-                "img/talent_singing.png", 
-                "img/talent_dancing.png", 
-                "img/talent_comedy.png", 
-                "img/talent_photography.png", 
-                "img/talent_facepainting.png"
+                "posters/Flux_your_talent.png", 
+                "posters/Singing.png", 
+                "posters/dancing.png", 
+                "posters/standup_comdey.png", 
+                "posters/Photography.png", 
+                "posters/.png"
             ]; 
             eventRules = [
                 "The events include singing, dancing, stand-up comedy, photography and face painting.",
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'mehendi':
             eventTitle = 'HENNA ARTISTRY';
-            posterPaths = ["img/mehendi.png", "img/mehendi_2.png"]; 
+            posterPaths = ["posters/Henna_Artistry.png", "posters/Henna_Artistry_RULES.png"]; 
             eventRules = [
                 "Open to all registered participants (per teams 2 member).",
                 "Time limit: Participants will have 1 hour to complete their mehendi design.",
