@@ -18,46 +18,51 @@
     </div>
     
     <!-- Header -->
- <!-- Header -->
-<header id="main-header">
-    <div class="nav-container">
-        <a href="main.html" class="logo">
-            <i class="fas fa-bolt logo-icon"></i>
-            CYGNUS'25
-        </a>
-        
-        <div class="hamburger" id="hamburger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="main.html" class="logo">
+                <i class="fas fa-bolt logo-icon"></i> CYGNUS'25
+            </a>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="main.html">Home</a></li>
+                <li><a href="main.html#about-crescent">About Crescent</a></li>
+                <li><a href="main.html#about-event">About Event</a></li>
+                <li><a href="main.html#events">Events</a></li>
+                <li><a href="main.html#guidelines">Guidelines</a></li>
+                <li><a href="main.html#organizers">Organizers</a></li>
+                <li><a href="main.html#sponsors">Sponsors</a></li>
+                <li class="register-link"><a href="main.html#registration">Register</a></li>
+            </ul>
+            <div class="nav-ornament ornament-left"></div>
+            <div class="nav-ornament ornament-right"></div>
         </div>
-        
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="main.html">Home</a></li>
-            <li><a href="main.html#about-crescent">About Crescent</a></li>
-            <li><a href="main.html#about-event">About Event</a></li>
-            <li><a href="main.html#events">Events</a></li>
-            <li><a href="main.html#guidelines">Guidelines</a></li>
-            <li><a href="main.html#organizers">Organizers</a></li>
-            <li><a href="main.html#sponsors">Sponsors</a></li>
-            <li class="register-link"><a href="main.html#registration">Register</a></li>
-        </ul>
-        
-        <div class="nav-ornament ornament-left"></div>
-        <div class="nav-ornament ornament-right"></div>
-    </div>
-</header>
+    </header>
     
     <!-- Event details container -->
     <div class="event-details-page">
         <div class="section-header">
             <h2 id="event-title">Event Details</h2>
         </div>
-        
         <div class="content-container">
-            <!-- Event poster -->
-            <div class="event-poster" id="event-poster-container">
-                <img id="event-poster-img" src="img/loading.gif" alt="Loading...">
+            <!-- Event poster carousel replacement -->
+            <div class="event-poster poster-carousel" id="event-poster-container">
+                <div class="poster-carousel-inner" id="poster-carousel-inner">
+                    <!-- Images will be populated by JavaScript -->
+                </div>
+                <div class="poster-nav poster-prev" id="poster-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="poster-nav poster-next" id="poster-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="poster-indicators" id="poster-indicators">
+                    <!-- Indicators will be populated by JavaScript -->
+                </div>
             </div>
             
             <!-- Event rules -->
@@ -76,13 +81,11 @@
                 <!-- Coordinator cards will be populated by JavaScript -->
             </div>
         </div>
+        
         <div class="back-button-container">
-    <a href="main.html" class="back-button">
-        <i class="fas fa-arrow-left"></i> Back to Events
-    </a>
-</div>
+            <a href="main.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Events
+            </a>
+        </div>
     </div>
-    
     <script src="event-card.js"></script>
-</body>
-</html>
