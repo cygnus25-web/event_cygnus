@@ -101,7 +101,7 @@ function smoothScrollTo(element) {
     switch (event) {
         case 'paper':
             eventTitle = 'Paper Presentation';
-            posterPath = "img/jahanger.png";
+            posterPath = "posters/Paper_presentation.png";
             eventRules = [
                 "Teams limited to 3 participants maximum.",
                 "Papers must address one of the specified themes (Electric Vehicles, Power Electronics, Renewable Energy, IoT Applications, etc.).",
@@ -120,16 +120,13 @@ function smoothScrollTo(element) {
                 "Plagiarism/direct copying from the internet is strictly prohibited"
             ];
             coordinators = [
-                {name: "Dr. SHUAIB", designation: "Faculty Coordinator", contact: "", email: ""},
-                {name: "Dr. BELWIN", designation: "Faculty Coordinator", contact: "", email: ""},
-                {name: "Dr. Zahira", designation: "Faculty Coordinator", contact: "", email: ""},
                 {name: "RAHUL A", designation: "Student Coordinator", contact: "8148130319", email: ""},
                 {name: "MAHESH V", designation: "Student Coordinator", contact: "9363041479", email: ""}
             ];
             break;
         case 'project':
             eventTitle = 'Project Presentation';
-            posterPath = "img/project_presentation.png"; 
+            posterPath = "posters/project_presentation.png"; 
             eventRules = [
                 "Teams can have 2-4 members.",
                 "Projects must be demonstrated in working condition with all required components.",
@@ -146,8 +143,8 @@ function smoothScrollTo(element) {
             ];
             break;
         case 'circuit':
-            eventTitle = 'CircuitXplorer';
-            posterPath = "img/circuitxplorer.png"; 
+            eventTitle = 'CirQuiz';
+            posterPath = "posters/CIRQUIZ.png"; 
             eventRules = [
                 "Teams consist of 2 members from the same college.",
                 "Multiple teams per college permitted.",
@@ -164,35 +161,41 @@ function smoothScrollTo(element) {
                 "Cheating or misconduct results in immediate disqualification."
             ];
             coordinators = [
-                {name: "MUKESH RAJ G", designation: "Student Coordinator", contact: "9384629805", email: ""}
-            ];
+                {name: "MUKESH RAJ G", designation: "Student Coordinator", contact: "9384629805", email: ""},
+                {name: "KUMLESH RAM", designation: "Student Coordinator", contact: "7540069764", email: ""}
+                           ];
             break;
         case 'ampere':
             eventTitle = 'Ampere Arena';
-            posterPath = "img/ampere_arena.png"; 
+            posterPath = "posters/Ampere Arena.png"; 
             eventRules = [
                 "Teams consist of exactly 3 members who must remain unchanged throughout the competition.",
                 "Absent team members cannot be replaced during any round.",
-                "Round 1: 'Shiritori Sparks' (Word Chain) - Teams create a word chain using electrical terms.",
-                "Teams have 7 seconds per turn to provide a non-repeated term.",
-                "Teams missing 2 turns are eliminated.",
-                "Round 2: 'Watt-A-Sketch' (Pictionary) - Teams draw randomly selected electrical terms in 30 seconds.",
-                "Guessing team earns 10 points for correct guess; drawing team earns 5 points.",
-                "Incorrect guesses deduct 5 points; maximum 3 wrong guesses per round.",
-                "Round 3: 'Ohm My Quiz' (Buzzer Round) - Buzzer-style questions on electrical engineering topics.",
-                "First team to buzz must answer within 5 seconds.",
-                "Correct answers: +10 points; incorrect answers: -5 points.",
-                "The team with the highest cumulative points across all stages wins the competition."
+                "Stage 1: 'EEE Ducklips' - One player holds two chips in mouth making a 'duckface' while reciting tongue twisters.",
+                "Team members must repeat the sentence correctly.",
+                "Each team gets 3 rounds with different members taking the 'duckface' role.",
+                "No spelling out letters or hand gestures allowed.",
+                "Scoring: Correct on first attempt: +10 points; Correct on second attempt: +5 points; Failed both attempts: 0 points.",
+                "Stage 2: 'EEE Tic-Tac-Toe' - 3x3 grid with EEE-related questions in each square.",
+                "Teams answer correctly to claim squares.",
+                "15 seconds to answer each question.",
+                "First team to complete a row/column/diagonal wins.",
+                "If no complete row, team with most squares wins.",
+                "Stage 3: 'EEE Jenga - Power Tower' - Jenga tower with EEE-related questions on blocks.",
+                "Teams pull blocks and answer questions.",
+                "Each team has 2 lives total.",
+                "Incorrect answer: lose 1 life.",
+                "Team is eliminated if tower collapses during their turn.",
+                "Last team standing or team with most correct answers wins."
             ];
             coordinators = [
                 {name: "HAFIZ ABDULLA K P", designation: "Student Coordinator", contact: "9447781289", email: ""},
                 {name: "THAMIZHARASAN T", designation: "Student Coordinator", contact: "9344647278", email: ""},
-                {name: "KUMLESH RAM", designation: "Student Coordinator", contact: "7540069764", email: ""}
-            ];
+                           ];
             break;
         case 'tesla':
-            eventTitle = 'Tesla vs Edison (Debate)';
-            posterPath = "img/tesla_edison.png"; 
+            eventTitle = 'Tesla vs Edison';
+            posterPath = "posters/Tesla VS Edition.png"; 
             eventRules = [
                 "Individual registration only.",
                 "Team assignment by coordinators during event.",
@@ -216,7 +219,6 @@ function smoothScrollTo(element) {
             posterPath = "img/biryani.png"; 
             eventRules = [
                 "Each team must consist of exactly 4 members.",
-                "The entry fee for each person is RS 200.",
                 "Entry fees must be paid in full at the time of registration.",
                 "Fees are non-refundable and non-transferable.",
                 "Teams must register online through the official event website.",
@@ -255,7 +257,7 @@ function smoothScrollTo(element) {
             ];
             break;
         case 'mehendi':
-            eventTitle = 'Mehendi';
+            eventTitle = 'HENNA ARTISTRY';
             posterPath = "img/mehendi.png"; 
             eventRules = [
                 "Open to all registered participants (per teams 2 member).",
@@ -271,7 +273,9 @@ function smoothScrollTo(element) {
                 "Judging criteria: The judges' decision will be final and based on creativity, clarity, and adherence to the chosen theme."
             ];
             coordinators = [
-                {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""}
+                {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""},
+                {name: "SUMAYATHUL HAIREE S", designation: "Student Coordinator", contact: "9025014134", email: ""}
+
             ];
             break;
         default:
