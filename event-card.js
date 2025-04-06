@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "posters/dancing.png", 
                 "posters/standup_comdey.png", 
                 "posters/Photography.png", 
-                "posters/.png"
+                "posters/Face_painting.png"
             ]; 
             eventRules = [
                 "The events include singing, dancing, stand-up comedy, photography and face painting.",
