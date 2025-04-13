@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Judging criteria: The judges' decision will be final and based on creativity, clarity, and adherence to the chosen theme."
             ];
             coordinators = [
-                {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "7358201768", email: ""},
+                {name: "AFRIN FATHIMA H", designation: "Student Coordinator", contact: "8072220984", email: ""},
                 {name: "SUMAYATHUL HAIREE S", designation: "Student Coordinator", contact: "9025014134", email: ""}
             ];
             break;
